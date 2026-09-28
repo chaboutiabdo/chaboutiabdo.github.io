@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog — Chabouti Abderrahim</title>
+<meta name="description" content="Notes from building THE SMART, PsyConnect and Odoo systems: AI, security, and lessons learned the hard way.">
+<meta property="og:title" content="Notes from building — Chabouti Abderrahim">
+<meta property="og:description" content="Real stories from my projects: what I built, what broke, and what I’d do again.">
+<meta name="theme-color" content="#07080a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307080a'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='monospace' font-weight='700' font-size='28' fill='%236ef2b8'%3ECA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<nav><div class="wrap"><a class="logo" href="../index.html"><span class="mark">CA</span>chabouti</a>
+  <div class="links always"><a href="../index.html">Home</a><a href="../index.html#projects">Projects</a><a href="../index.html#contact">Contact</a></div>
+</div></nav>
+
+<main class="wrap">
+  <header class="blog-head">
+    <p class="kicker">// blog</p>
+    <h1>Notes from building</h1>
+    <p class="lead">Real stories from my projects — THE SMART, PsyConnect and the Odoo platform at HIS: what I built, what broke, and what I’d do again.</p>
+    <div class="facts"><span><b>5</b> posts</span><span><b>28</b> min of reading</span><span>written in English</span></div>
+  </header>
+
+  <div class="filters" role="group" aria-label="Filter posts by topic">
+    <button type="button" data-filter="all" aria-pressed="true">All<b>5</b></button>
+    <button type="button" data-filter="ai" aria-pressed="false">AI<b>2</b></button>
+    <button type="button" data-filter="security" aria-pressed="false">Security<b>1</b></button>
+    <button type="button" data-filter="odoo" aria-pressed="false">Odoo<b>1</b></button>
+    <button type="button" data-filter="postmortem" aria-pressed="false">Postmortem<b>1</b></button>
+  </div>
+
+  <div class="list">
+    <a class="card post-row reveal" data-tag="ai" href="ai-tutor.html">
+      <div class="pmeta"><span class="tag">AI</span><span>Sep 2026 · 7 min</span></div>
+      <div>
+        <h2>One function, four modes: the AI inside THE SMART</h2>
+        <p>How a single server function runs the tutor, the mistake explainer, flashcards and a multimodal exam solver on Gemini’s free tier — without leaking the key or the budget.</p>
+      </div>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="card post-row reveal" data-tag="security" href="attack-my-own-app.html">
+      <div class="pmeta"><span class="tag warm">Security</span><span>Sep 2026 · 6 min</span></div>
+      <div>
+        <h2>I attacked my own app 210 times</h2>
+        <p>55 fake users, 205 attacks run as real signed-in students, and the leaderboard exploit that justified all of it.</p>
+      </div>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="card post-row reveal" data-tag="odoo" href="rfid-meal-credits.html">
+      <div class="pmeta"><span class="tag lav">Odoo</span><span>Sep 2026 · 6 min</span></div>
+      <div>
+        <h2>One meal, one credit: RFID meal cards on Odoo 19</h2>
+        <p>The prepaid meal system I built during my internship, and the four independent guarantees that keep a university’s meal credits honest.</p>
+      </div>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="card post-row reveal" data-tag="postmortem" href="db-reset.html">
+      <div class="pmeta"><span class="tag warm">Postmortem</span><span>Sep 2026 · 4 min</span></div>
+      <div>
+        <h2>The day db reset wiped my accounts</h2>
+        <p>Two self-inflicted outages in one week — a wiped database and a silent AI — and the checklist I wrote after.</p>
+      </div>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="card post-row reveal" data-tag="ai" href="how-llms-understand.html">
+      <div class="pmeta"><span class="tag">AI</span><span>Sep 2026 · 5 min</span></div>
+      <div>
+        <h2>Does ChatGPT really understand us?</h2>
+        <p>A student-friendly explanation of how large language models work, with a short summary in Arabic.</p>
+      </div>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
+
+  <div class="card author reveal">
+    <div class="monogram" aria-hidden="true">CA</div>
+    <div>
+      <h3>Written by Chabouti Abderrahim</h3>
+      <p>Founder of THE SMART, an AI exam-prep platform for Algerian BAC students. I build AI products, full-stack apps and Odoo systems — and write down what I learn.</p>
+      <div class="actions">
+        <a class="btn primary" href="../index.html#projects">See my projects</a>
+        <a class="btn" href="../index.html#contact">Get in touch</a>
+      </div>
+    </div>
+  </div>
+
+  <footer><span>© 2026 Chabouti Abderrahim</span><a href="../index.html">← Back to portfolio</a></footer>
+</main>
+
+<script>
+document.documentElement.classList.add("js");
+
+const bar = document.getElementById("progress");
+addEventListener("scroll", () => { const h = document.documentElement; bar.style.transform = `scaleX(${h.scrollTop / (h.scrollHeight - h.clientHeight) || 0})`; }, { passive: true });
+
+const rows = [...document.querySelectorAll(".post-row")];
+const buttons = document.querySelectorAll("[data-filter]");
+buttons.forEach(b => b.addEventListener("click", () => {
+  const f = b.dataset.filter;
+  buttons.forEach(x => x.setAttribute("aria-pressed", x === b));
+  rows.forEach(r => r.hidden = f !== "all" && r.dataset.tag !== f);
+}));
+
+document.querySelectorAll(".card").forEach(c => c.addEventListener("pointermove", e => {
+  const r = c.getBoundingClientRect();
+  c.style.setProperty("--mx", e.clientX - r.left + "px");
+  c.style.setProperty("--my", e.clientY - r.top + "px");
+}));
+
+const reveals = document.querySelectorAll(".reveal");
+reveals.forEach((el, i) => el.style.setProperty("--d", Math.min(i, 5) * 80 + "ms"));
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+}), { threshold: 0.1 });
+reveals.forEach(el => io.observe(el));
+</script>
+</body>
+</html>

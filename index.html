@@ -27,7 +27,7 @@
     <div class="links">
       <a href="#projects" data-i18n="nav.projects">Projects</a>
       <a href="#ai" data-i18n="nav.ai">AI</a>
-      <a href="#blog" data-i18n="nav.blog">Blog</a>
+      <a href="blog/index.html" data-i18n="nav.blog">Blog</a>
       <a href="#journey" data-i18n="nav.journey">Journey</a>
       <a href="#contact" data-i18n="nav.contact">Contact</a>
     </div>
@@ -303,46 +303,14 @@
 
   <!-- ============ BLOG ============ -->
   <section id="blog">
-    <p class="kicker">// blog</p>
-    <h2 data-i18n="blog.title">Notes from building</h2>
-    <p class="sub" data-i18n="blog.sub">Real stories from my projects: what I built, what broke, and what I’d do again.</p>
-    <div class="posts">
-      <a class="card post-card reveal" href="blog/ai-tutor.html">
-        <span class="tag">AI</span>
-        <span class="pmeta">Sep 2026 · 7 min<span data-i18n="blog.en"></span></span>
-        <h3 data-i18n="p1.t">One function, four modes: the AI inside THE SMART</h3>
-        <p data-i18n="p1.d">How a single server function runs the tutor, the mistake explainer, flashcards and a multimodal exam solver on Gemini’s free tier — without leaking the key or the budget.</p>
-        <span class="read" data-i18n="read">Read <i>→</i></span>
-      </a>
-      <a class="card post-card reveal" href="blog/attack-my-own-app.html">
-        <span class="tag warm" data-i18n="p2.tag">Security</span>
-        <span class="pmeta">Sep 2026 · 6 min<span data-i18n="blog.en2"></span></span>
-        <h3 data-i18n="p2.t">I attacked my own app 210 times</h3>
-        <p data-i18n="p2.d">55 fake users, 205 attacks, and the leaderboard exploit that justified all of it.</p>
-        <span class="read" data-i18n="read2">Read <i>→</i></span>
-      </a>
-      <a class="card post-card reveal" href="blog/rfid-meal-credits.html">
-        <span class="tag lav">Odoo</span>
-        <span class="pmeta">Sep 2026 · 6 min<span data-i18n="blog.en3"></span></span>
-        <h3 data-i18n="p3.t">One meal, one credit: RFID meal cards on Odoo 19</h3>
-        <p data-i18n="p3.d">Four independent guarantees that keep a university’s meal credits honest.</p>
-        <span class="read" data-i18n="read3">Read <i>→</i></span>
-      </a>
-      <a class="card post-card reveal" href="blog/db-reset.html">
-        <span class="tag warm" data-i18n="p4.tag">Postmortem</span>
-        <span class="pmeta">Sep 2026 · 4 min<span data-i18n="blog.en4"></span></span>
-        <h3 data-i18n="p4.t">The day db reset wiped my accounts</h3>
-        <p data-i18n="p4.d">Two self-inflicted outages in one week, and the checklist I wrote after.</p>
-        <span class="read" data-i18n="read4">Read <i>→</i></span>
-      </a>
-      <a class="card post-card reveal" href="blog/how-llms-understand.html">
-        <span class="tag">AI</span>
-        <span class="pmeta">Sep 2026 · 5 min<span data-i18n="blog.en5"></span></span>
-        <h3 data-i18n="p5.t">Does ChatGPT really understand us?</h3>
-        <p data-i18n="p5.d">A student-friendly explanation of how large language models work, with a short Arabic summary.</p>
-        <span class="read" data-i18n="read5">Read <i>→</i></span>
-      </a>
-    </div>
+    <a class="card blog-cta reveal" href="blog/index.html">
+      <div>
+        <p class="kicker">// blog</p>
+        <h2 data-i18n="blog.title">Notes from building</h2>
+        <p data-i18n="blog.sub">Real stories from my projects: what I built, what broke, and what I’d do again. 5 posts on AI, security, Odoo and lessons learned.</p>
+      </div>
+      <span class="btn primary" data-i18n="blog.cta">Open the blog →</span>
+    </a>
   </section>
 
   <!-- ============ JOURNEY ============ -->
@@ -485,19 +453,8 @@ const FR = {
   "content.desc": "Je prépare de courtes vidéos en arabe pour les étudiants sur la façon dont des outils comme ChatGPT nous « comprennent » — pour rendre l’IA moins magique et plus accessible.",
   "content.more": "Lire la version écrite →",
   "blog.title": "Carnet de bord",
-  "blog.sub": "Des histoires vraies tirées de mes projets : ce que j’ai construit, ce qui a cassé, et ce que je referais.",
-  "blog.en": " · en anglais", "blog.en2": " · en anglais", "blog.en3": " · en anglais", "blog.en4": " · en anglais", "blog.en5": " · en anglais",
-  "p1.t": "Une fonction, quatre modes : l’IA de THE SMART",
-  "p1.d": "Comment une seule fonction serveur fait tourner le tuteur, l’explication d’erreurs, les flashcards et un solveur d’examens multimodal sur l’offre gratuite de Gemini — sans fuite de clé ni de budget.",
-  "p2.tag": "Sécurité", "p2.t": "J’ai attaqué ma propre app 210 fois",
-  "p2.d": "55 faux utilisateurs, 205 attaques, et la faille du classement qui a tout justifié.",
-  "p3.t": "Un repas, un crédit : cartes repas RFID sur Odoo 19",
-  "p3.d": "Quatre garanties indépendantes qui gardent honnêtes les crédits repas d’une université.",
-  "p4.tag": "Post-mortem", "p4.t": "Le jour où db reset a effacé mes comptes",
-  "p4.d": "Deux pannes auto-infligées en une semaine, et la checklist écrite juste après.",
-  "p5.t": "ChatGPT nous comprend-il vraiment ?",
-  "p5.d": "Une explication accessible du fonctionnement des grands modèles de langage, avec un court résumé en arabe.",
-  "read": "Lire <i>→</i>", "read2": "Lire <i>→</i>", "read3": "Lire <i>→</i>", "read4": "Lire <i>→</i>", "read5": "Lire <i>→</i>",
+  "blog.sub": "Des histoires vraies tirées de mes projets : ce que j’ai construit, ce qui a cassé, et ce que je referais. 5 articles (en anglais) sur l’IA, la sécurité, Odoo et les leçons apprises.",
+  "blog.cta": "Ouvrir le blog →",
   "journey.title": "Mon parcours",
   "j1.when": "2 ans",
   "j1.desc": "Deux ans dans l’une des meilleures écoles d’ingénieurs en informatique d’Algérie : algorithmique, C, Pascal, maths — et l’habitude d’aller au fond des choses.",
