@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One meal, one credit: RFID meal cards on Odoo 19 — Chabouti Abderrahim</title>
+<meta name="description" content="How I built a university's prepaid RFID meal-credit system on Odoo 19, and the four independent guarantees that keep it honest.">
+<meta name="theme-color" content="#07080a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307080a'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='monospace' font-weight='700' font-size='28' fill='%236ef2b8'%3ECA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<nav><div class="wrap"><a class="logo" href="../index.html"><span class="mark">CA</span>chabouti</a><div class="links always"><a href="../index.html#blog">← All posts</a></div></div></nav>
+
+<main class="wrap post">
+  <p class="kicker">// odoo · sep 2026 · 6 min read</p>
+  <h1>One meal, one credit: RFID meal cards on Odoo 19</h1>
+  <p class="lead">During my internship at Groupe HIS-HTC-IRA I built the university’s prepaid meal system on Odoo 19. The whole system serves one rule: one meal served = one credit consumed.</p>
+
+  <article class="prose">
+    <h2>The shape</h2>
+    <p>Two points of sale:</p>
+    <ul>
+      <li>The <strong>Student Centre</strong> sells meal plans — weekly, monthly, semester — for real money.</li>
+      <li>The <strong>University Restaurant</strong> serves meals; each meal spends exactly one credit.</li>
+    </ul>
+    <p>Students tap an RFID card. The card carries an identifier and nothing else — every credit lives in the database. Lose your card and you lose nothing: block it, issue a new one, balance intact.</p>
+<pre><code>res.partner ──> his.meal.card ──> his.meal.subscription ──> his.meal.transaction
+ the person      names them,       one purchase: credits     one line per credit
+ owns balance    holds no credit    + validity window         that moved, forever</code></pre>
+    <p>A meal plan is an ordinary Odoo product with two extra fields, <code>meal_credits</code> and <code>meal_validity_days</code>. Pricing, payment, invoicing and POS sellability all come for free, and there’s no parallel “plan” model to keep in sync.</p>
+
+    <h2>Where credits move</h2>
+    <p>Exactly one place: <code>pos.order._apply_meal_credits()</code>, on the server, when a validated order is saved.</p>
+    <ul>
+      <li>A line whose product carries credits → <strong>grants</strong> a subscription.</li>
+      <li>The restaurant’s meal product <strong>priced at zero</strong> → <strong>spends</strong> one credit per unit.</li>
+      <li>The same product at its real price → a paying walk-in; no balance is touched.</li>
+    </ul>
+    <p>The POS button that shows a balance is a convenience. A cashier with the browser console open can’t grant a credit or serve an unpaid meal — the order simply fails to validate. Credits are taken one at a time from the <strong>soonest-to-expire</strong> subscription, so credits close to expiry are always used first.</p>
+
+    <h2>Four guarantees, independent on purpose</h2>
+    <p>Defeating one doesn’t defeat the others.</p>
+    <table>
+      <thead><tr><th>Guarantee</th><th>Mechanism</th></tr></thead>
+      <tbody>
+        <tr><td>The server decides</td><td><code>_apply_meal_credits</code>, not the browser</td></tr>
+        <tr><td>No negative balance</td><td><code>CHECK (credits_used &gt;= 0 AND credits_used &lt;= credits_total)</code> in Postgres</td></tr>
+        <tr><td>Two tills can’t both spend the last credit</td><td><code>SELECT … FOR UPDATE</code> on the person’s subscriptions before reading</td></tr>
+        <tr><td>Nothing changes silently</td><td>the ledger’s <code>write()</code> and <code>unlink()</code> always raise — for admins too</td></tr>
+      </tbody>
+    </table>
+    <p>And credits move <strong>exactly once per order</strong>: before applying anything, the code looks for a ledger line carrying that order’s id, so an order that syncs twice can’t charge twice. When a correction is genuinely needed, there’s one sanctioned path — an adjustment wizard that writes its own ledger line, with a name on it.</p>
+
+    <h2>The RFID reader is a keyboard</h2>
+    <p>The reader types the card’s 10-digit UID and presses Enter. That’s convenient — no driver, works with any till — and dangerous: the POS has to tell a card scan apart from a product barcode. That part got its own section in the handover document, because it’s the first thing a well-meaning developer would “clean up” into a bug.</p>
+
+    <h2>Proven on hardware</h2>
+    <p>43 automated tests, green — and then the real thing: real cards on a real RFID reader, end to end. Later versions added two meal tiers with half credits, a working-day view, and an advance of two meals on an empty card.</p>
+
+    <h2>What I took from it</h2>
+    <p>It’s the same lesson as THE SMART’s <a href="attack-my-own-app.html">leaderboard exploit</a>: anything with a value is decided by the server and protected by the database. The UI is for humans; the rules live below it.</p>
+    <p>And one more: <strong>write down what looks wrong but is deliberate.</strong> The handover file for this module marks every one of those with a ⚠ — because the next person to open the code, human or AI, will want to “fix” them.</p>
+  </article>
+
+  <div class="card post-foot">
+    <p>Written by <strong>Chabouti Abderrahim</strong> — internship at Groupe HIS-HTC-IRA, Aug–Sep 2026.</p>
+    <a class="btn primary" href="db-reset.html">Next: the day db reset wiped my accounts →</a>
+  </div>
+  <footer><span>© 2026 Chabouti Abderrahim</span><a href="../index.html#contact">Contact →</a></footer>
+</main>
+<script>
+const bar = document.getElementById("progress");
+addEventListener("scroll", () => { const h = document.documentElement; bar.style.transform = `scaleX(${h.scrollTop / (h.scrollHeight - h.clientHeight) || 0})`; }, { passive: true });
+</script>
+</body>
+</html>

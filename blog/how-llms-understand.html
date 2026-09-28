@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Does ChatGPT really understand us? — Chabouti Abderrahim</title>
+<meta name="description" content="A student-friendly explanation of how large language models like ChatGPT work, with a short Arabic summary.">
+<meta name="theme-color" content="#07080a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307080a'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='monospace' font-weight='700' font-size='28' fill='%236ef2b8'%3ECA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<nav><div class="wrap"><a class="logo" href="../index.html"><span class="mark">CA</span>chabouti</a><div class="links always"><a href="../index.html#blog">← All posts</a></div></div></nav>
+
+<main class="wrap post">
+  <p class="kicker">// ai explained · sep 2026 · 5 min read</p>
+  <h1>Does ChatGPT really understand us?</h1>
+  <p class="lead">A student-friendly explanation of how large language models work — the written version of a video I’m preparing in Arabic.</p>
+
+  <article class="prose">
+    <h2>What it is</h2>
+    <p>ChatGPT is a <strong>large language model</strong> (LLM): a neural network trained on enormous amounts of text — books, articles, conversations — in many languages, Arabic included. People use it to answer questions, write, help with code and create stories or poems.</p>
+
+    <h2>What happens when you ask it something</h2>
+    <ol>
+      <li><strong>It was trained on huge amounts of text.</strong> It learned patterns from billions of sentences. More, and better, data means more accurate and more varied answers.</li>
+      <li><strong>It’s a deep neural network.</strong> Billions of <em>parameters</em> — numbers adjusted during training — link words to the context they appear in.</li>
+      <li><strong>It predicts the next word.</strong> When you type a question, it doesn’t look the answer up. It reads the whole context and predicts the most likely next piece of text, then the next, then the next. That’s how a fluent answer appears, word by word.</li>
+      <li><strong>Humans taught it manners.</strong> After the base training, people rated its answers and the model was tuned toward the helpful ones. This is called RLHF — reinforcement learning from human feedback.</li>
+      <li><strong>It makes mistakes.</strong> It can be confidently wrong, especially where its data is thin, and it can repeat biases from that data. That’s why you check.</li>
+    </ol>
+
+    <h2>So… does it understand?</h2>
+    <p>Not the way you do. It has no experiences and no intentions. What it has learned is an extraordinarily good model of <strong>how language fits together</strong> — good enough to explain, summarise and reason step by step. Whether that counts as “understanding” is still an open debate among researchers. For studying, the practical answer matters more: it’s a very patient tutor that is sometimes wrong.</p>
+
+    <h2>How I use this in THE SMART</h2>
+    <p>Knowing how the model works shaped how I built the AI tutor in <a href="ai-tutor.html">THE SMART</a>:</p>
+    <ul>
+      <li><strong>Ground it in real material.</strong> The exam solver explains the official BAC solution when one exists, instead of inventing its own.</li>
+      <li><strong>Make it show the steps</strong>, so a student can check each one instead of trusting the final line.</li>
+      <li><strong>Keep it on topic.</strong> The subject and chapter are fixed from a closed list, so the conversation stays inside the curriculum.</li>
+    </ul>
+    <p>Use AI like a tutor who’s sometimes wrong: ask for the steps, then verify them.</p>
+
+    <h2>بالعربية، باختصار</h2>
+    <p class="ar" lang="ar">ChatGPT لا «يفهم» كما نفهم نحن. هو نموذج تعلّم من كمّ هائل من النصوص كيف تترابط الكلمات، فيتوقّع الكلمة التالية الأكثر احتمالاً بناءً على السياق، كلمةً بعد كلمة. لهذا يمكن أن يكون مقنعاً ومخطئاً في الوقت نفسه. استعمله كأستاذ صبور قد يخطئ أحياناً: اطلب منه الخطوات، ثم تحقّق منها بنفسك.</p>
+  </article>
+
+  <div class="card post-foot">
+    <p>Written by <strong>Chabouti Abderrahim</strong>, founder of <a href="https://mybac-25n.pages.dev/" target="_blank" rel="noopener" style="color:var(--accent)">THE SMART</a>.</p>
+    <a class="btn primary" href="ai-tutor.html">Next: the AI inside THE SMART →</a>
+  </div>
+  <footer><span>© 2026 Chabouti Abderrahim</span><a href="../index.html#contact">Contact →</a></footer>
+</main>
+<script>
+const bar = document.getElementById("progress");
+addEventListener("scroll", () => { const h = document.documentElement; bar.style.transform = `scaleX(${h.scrollTop / (h.scrollHeight - h.clientHeight) || 0})`; }, { passive: true });
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The day db reset wiped my accounts — Chabouti Abderrahim</title>
+<meta name="description" content="Two self-inflicted outages in one week on THE SMART's local stack, and the checklist I wrote afterwards.">
+<meta name="theme-color" content="#07080a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307080a'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='monospace' font-weight='700' font-size='28' fill='%236ef2b8'%3ECA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<nav><div class="wrap"><a class="logo" href="../index.html"><span class="mark">CA</span>chabouti</a><div class="links always"><a href="../index.html#blog">← All posts</a></div></div></nav>
+
+<main class="wrap post">
+  <p class="kicker">// postmortem · sep 2026 · 4 min read</p>
+  <h1>The day <code style="font-family:var(--mono);font-size:.8em">db reset</code> wiped my accounts</h1>
+  <p class="lead">Two outages in one week on THE SMART’s local stack. Both self-inflicted, both now written into the project’s rules.</p>
+
+  <article class="prose">
+    <h2>22 September: <code>db reset</code></h2>
+    <p>I had a new migration to apply, and I ran <code>supabase db reset</code>. It does apply migrations — by rebuilding the local database from scratch. Every account I’d signed up with, every point, every streak, all the progress: gone.</p>
+    <p>Nothing was lost in production. But that was luck, not process. The rule now sits in the README, in bold:</p>
+<pre><code>npx supabase db dump --local --data-only -f backup.sql   # keep it outside the repo
+npx supabase migration up
+npm run types:gen</code></pre>
+    <p>Back up, then apply only what’s new. <code>db reset</code> is for empty stacks.</p>
+
+    <h2>Same week: the AI went silent</h2>
+    <p>All four AI features stopped at once, and 14 security tests failed with them. The code was fine. Docker had crashed when the disk filled up, and when it came back, every container restarted — except <code>supabase_edge_runtime_mybac</code>, the one that runs the AI function. It sat at <code>Exited (255)</code>.</p>
+    <p>Worse: <code>npx supabase start</code> reported that it had handled it. It hadn’t. A plain <code>docker start supabase_edge_runtime_mybac</code> did. The tutor answered in 2.7 seconds, and the security suite went back to green.</p>
+
+    <h2>Why it took longer than it should have</h2>
+    <p>Every failure inside the function collapsed into the same generic <code>500</code>: an invalid key, a missing key, an unreachable server, malformed JSON — all identical from the client. The real cause only showed in the server logs. And old logs stay visible even when the container is dead, so without <code>--since</code> you can spend an afternoon diagnosing yesterday’s error.</p>
+
+    <h2>The checklist I wrote afterwards</h2>
+    <ol>
+      <li><strong>The container first, always.</strong> <code>docker ps -a | grep edge</code> — if it says <code>Exited</code>, that’s your answer and everything else is a waste of time.</li>
+      <li><strong>Fresh logs only.</strong> <code>docker logs supabase_edge_runtime_mybac --since 5m</code>.</li>
+      <li><strong>Is the key there?</strong> <code>supabase/functions/.env</code> → <code>GEMINI_API_KEY</code>. A missing key looks like any other 500.</li>
+      <li><strong>Is Gemini reachable?</strong> <code>curl -sI https://generativelanguage.googleapis.com/</code> — a quick answer means the network is fine and the problem is elsewhere.</li>
+      <li><strong>One real end-to-end call</strong> as a premium user. Healthy is a <code>200</code> in about 3 seconds.</li>
+    </ol>
+    <p>And the root cause that keeps coming back: <strong>a full disk</strong>.</p>
+
+    <h2>Takeaway</h2>
+    <p>Write the incident into the repo the same day. A rule in <code>DEVELOPMENT.md</code> beats a memory of a bad afternoon — and it’s the only kind of memory the next developer, or the next AI assistant, will actually read.</p>
+  </article>
+
+  <div class="card post-foot">
+    <p>Written by <strong>Chabouti Abderrahim</strong>, founder of <a href="https://mybac-25n.pages.dev/" target="_blank" rel="noopener" style="color:var(--accent)">THE SMART</a>.</p>
+    <a class="btn primary" href="how-llms-understand.html">Next: does ChatGPT understand us? →</a>
+  </div>
+  <footer><span>© 2026 Chabouti Abderrahim</span><a href="../index.html#contact">Contact →</a></footer>
+</main>
+<script>
+const bar = document.getElementById("progress");
+addEventListener("scroll", () => { const h = document.documentElement; bar.style.transform = `scaleX(${h.scrollTop / (h.scrollHeight - h.clientHeight) || 0})`; }, { passive: true });
+</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I attacked my own app 210 times — Chabouti Abderrahim</title>
+<meta name="description" content="55 fake users, 205 attacks run as real signed-in users, and the leaderboard exploit that justified all of it.">
+<meta name="theme-color" content="#07080a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307080a'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='monospace' font-weight='700' font-size='28' fill='%236ef2b8'%3ECA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<nav><div class="wrap"><a class="logo" href="../index.html"><span class="mark">CA</span>chabouti</a><div class="links always"><a href="../index.html#blog">← All posts</a></div></div></nav>
+
+<main class="wrap post">
+  <p class="kicker">// security · sep 2026 · 6 min read</p>
+  <h1>I attacked my own app 210 times</h1>
+  <p class="lead">THE SMART has a leaderboard, premium features and a paid AI. That makes it worth cheating. So before launch I wrote an attack suite that tries — as real, signed-in users.</p>
+
+  <article class="prose">
+    <h2>The setup</h2>
+    <p><code>npm run seed:testusers</code> creates 55 accounts: 40 students, 10 premium students and 5 admins. Then <code>npm run security</code> runs two suites against the local Supabase stack:</p>
+    <ul>
+      <li><code>check-security.mjs</code> — the five original row-level-security assertions</li>
+      <li><code>attack-suite.mjs</code> — 205 attacks, each run by a real signed-in user with a real session token</li>
+    </ul>
+    <p>Every test <strong>passes when the attack is blocked</strong>. What it tries:</p>
+    <ul>
+      <li><strong>Privilege escalation</strong> — a student changing their own role, subscription status or score</li>
+      <li><strong>IDOR across the 55-user cohort</strong> — reading or editing another student’s data by id</li>
+      <li><strong>Points and score forgery</strong>, and download-counter forgery</li>
+      <li><strong>An anonymous read sweep</strong> over every table</li>
+      <li><strong>Premium bypass</strong>, storage access, private flashcard decks and per-student AI caches</li>
+      <li><strong>The AI function</strong> — the daily ceiling, oversized papers, SSRF, forged and anonymous premium requests</li>
+    </ul>
+
+    <h2>The bug that justified all of it</h2>
+    <p>The leaderboard reads <code>profiles.total_score</code>. At one point, <strong>three different formulas</strong> competed to write that column — and two of them read tables a student could write to. So a single insert from the browser console set your leaderboard score to any number you liked:</p>
+<pre><code>// illustrative
+await supabase.from('quiz_attempts').insert({ quiz_id, score: 999999 });</code></pre>
+    <p>And a perfect retake re-banked its score every single time.</p>
+
+    <h2>The fix: one writer</h2>
+    <ul>
+      <li><strong>Grading moved into Postgres.</strong> <code>submit_quiz_attempt</code> is the only thing allowed to write a score. The browser reads <code>quizzes_public</code>, a view that strips the answer key — so the key never reaches the client at all.</li>
+      <li><strong>Open, but don’t score.</strong> A student may create an attempt, but the insert policy pins <code>score = 0</code>, <code>completed_at IS NULL</code> and <code>submitted = false</code>.</li>
+      <li><strong>One writer for the total.</strong> <code>profiles.total_score</code> is written only by <code>update_student_total_score</code>, which sums <code>points_transactions</code>.</li>
+      <li><strong>Points only from the server.</strong> They enter only through <code>SECURITY DEFINER</code> functions, and the award RPC is revoked from <code>authenticated</code> — a browser can’t even call it.</li>
+      <li><strong>Every award is idempotent.</strong> A unique index means the same points can’t be banked twice:</li>
+    </ul>
+<pre><code>-- simplified
+create unique index on points_transactions
+  (student_id, source_type, source_id, coalesce(question_id, ''));</code></pre>
+
+    <h2>A trap inside the fix</h2>
+    <p>The trigger that recomputes the total runs <code>AFTER INSERT OR DELETE</code>. On a delete, <code>NEW</code> is null — so anything it reads must use <code>COALESCE(NEW.x, OLD.x)</code>. Get that wrong and the delete path raises, the trigger’s own <code>EXCEPTION</code> block swallows the error, and scores silently go stale. No crash, no log you’ll notice — just a wrong leaderboard. It’s written in the project’s invariants now, so nobody “simplifies” it back.</p>
+
+    <h2>Rules I keep</h2>
+    <ol>
+      <li><strong>Reseed before every run.</strong> A failing run can leave escalated roles behind, and stale roles make later tests pass for the wrong reason.</li>
+      <li><strong>Test as a user, never as an admin.</strong> The service key bypasses row-level security. Your tests shouldn’t.</li>
+      <li><strong>Anything with a value is written by the server.</strong> Scores, points, credits, roles.</li>
+      <li><strong>Keep the suite in the repo</strong> and run it after every migration.</li>
+    </ol>
+    <p>I later applied the same rule — <em>the server decides</em> — to a university’s meal-credit system on Odoo. Different stack, same lesson: <a href="rfid-meal-credits.html">One meal, one credit</a>.</p>
+  </article>
+
+  <div class="card post-foot">
+    <p>Written by <strong>Chabouti Abderrahim</strong>, founder of <a href="https://mybac-25n.pages.dev/" target="_blank" rel="noopener" style="color:var(--accent)">THE SMART</a>.</p>
+    <a class="btn primary" href="rfid-meal-credits.html">Next: RFID meal credits →</a>
+  </div>
+  <footer><span>© 2026 Chabouti Abderrahim</span><a href="../index.html#contact">Contact →</a></footer>
+</main>
+<script>
+const bar = document.getElementById("progress");
+addEventListener("scroll", () => { const h = document.documentElement; bar.style.transform = `scaleX(${h.scrollTop / (h.scrollHeight - h.clientHeight) || 0})`; }, { passive: true });
+</script>
+</body>
+</html>

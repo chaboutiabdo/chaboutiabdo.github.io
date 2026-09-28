@@ -4,170 +4,30 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chabouti Abderrahim — AI & Full-stack Founder</title>
-<meta name="description" content="Chabouti Abderrahim — founder of THE SMART, an AI exam-prep platform for Algerian BAC students. Full-stack web, AI products and Odoo systems.">
+<meta name="description" content="Chabouti Abderrahim — founder of THE SMART, an AI exam-prep platform for Algerian BAC students. AI products, full-stack web, Odoo systems.">
 <meta property="og:title" content="Chabouti Abderrahim — AI & Full-stack Founder">
 <meta property="og:description" content="Founder of THE SMART. I build AI products that real people use.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="assets/the-smart.png">
 <meta name="theme-color" content="#07080a">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307080a'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='monospace' font-weight='700' font-size='28' fill='%236ef2b8'%3ECA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#07080a; --surface:#0e1014; --surface-2:#14171d; --line:#1f242d; --line-2:#2a303b;
-  --text:#e8eaed; --muted:#8b94a3; --accent:#6ef2b8; --accent-dim:rgba(110,242,184,.12); --blue:#8ab4ff;
-  --sans:"Space Grotesk",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
-  background-size:56px 56px;opacity:.35;mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 30%,transparent 75%)}
-body::after{content:"";position:fixed;z-index:-1;pointer-events:none;width:720px;height:720px;top:-360px;left:50%;transform:translateX(-50%);
-  background:radial-gradient(circle,rgba(110,242,184,.13),transparent 65%)}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;height:auto;display:block}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
-.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
-.mono{font-family:var(--mono)}
-.skip{position:absolute;left:-999px;top:8px;background:var(--accent);color:#000;padding:8px 12px;border-radius:8px;z-index:99}
-.skip:focus{left:8px}
-
-/* nav */
-nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(7,8,10,.7);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;align-items:center;gap:24px;height:64px}
-.logo{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-weight:600;font-size:14px}
-.mark{display:grid;place-items:center;width:32px;height:32px;border-radius:9px;border:1px solid var(--line-2);background:var(--surface);color:var(--accent);font-family:var(--mono);font-weight:600;font-size:13px}
-.links{display:flex;gap:24px;margin-left:auto;font-size:14px;color:var(--muted)}
-.links a:hover{color:var(--text)}
-.lang{display:flex;border:1px solid var(--line-2);border-radius:999px;padding:3px;font-family:var(--mono);font-size:12px}
-.lang button{background:none;border:0;color:var(--muted);padding:4px 10px;border-radius:999px;cursor:pointer;font:inherit}
-.lang button[aria-pressed="true"]{background:var(--accent);color:#04120b;font-weight:600}
-@media (max-width:680px){.links{display:none}.lang{margin-left:auto}}
-
-/* hero */
-.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;padding:96px 0 72px}
-.status{display:inline-flex;align-items:center;gap:10px;padding:6px 14px 6px 10px;border:1px solid var(--line-2);border-radius:999px;background:var(--surface);font-family:var(--mono);font-size:12.5px;color:var(--muted)}
-.status:hover{border-color:var(--accent);color:var(--text)}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(110,242,184,.6);animation:pulse 2s infinite}
-@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(110,242,184,0)}100%{box-shadow:0 0 0 0 rgba(110,242,184,0)}}
-.monogram{width:72px;height:72px;border-radius:20px;display:grid;place-items:center;margin:28px 0 20px;font-family:var(--mono);font-weight:600;font-size:26px;color:var(--accent);
-  background:linear-gradient(var(--surface),var(--surface)) padding-box,linear-gradient(135deg,var(--accent),transparent 60%,var(--blue)) border-box;border:1px solid transparent}
-h1{font-size:clamp(40px,6.4vw,72px);line-height:1.02;letter-spacing:-.035em;font-weight:700}
-.role{margin-top:14px;font-family:var(--mono);font-size:clamp(14px,1.6vw,16px);color:var(--accent)}
-.lead{margin-top:20px;font-size:clamp(17px,1.9vw,20px);color:var(--muted);max-width:34em}
-.lead strong{color:var(--text);font-weight:500}
-.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;font-weight:600;font-size:15px;border:1px solid var(--line-2);transition:transform .15s,border-color .15s,background .15s}
-.btn:hover{transform:translateY(-1px);border-color:var(--accent)}
-.btn.primary{background:var(--accent);color:#04120b;border-color:var(--accent)}
-.btn.primary:hover{background:#8ff7c9}
-.meta{margin-top:28px;font-size:14px;color:var(--muted);display:flex;align-items:center;gap:8px}
-
-.term{border:1px solid var(--line-2);border-radius:16px;background:rgba(14,16,20,.85);box-shadow:0 30px 80px -30px rgba(0,0,0,.8),0 0 0 1px rgba(110,242,184,.04);overflow:hidden}
-.bar{display:flex;align-items:center;gap:7px;padding:12px 14px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:12px;color:var(--muted)}
-.bar i{width:11px;height:11px;border-radius:50%;background:var(--line-2)}
-.bar i:first-child{background:#ff6b6b99}.bar i:nth-child(2){background:#ffd16699}.bar i:nth-child(3){background:#6ef2b899}
-.bar span{margin-left:auto}
-.term pre{padding:20px 20px 24px;font-family:var(--mono);font-size:13px;line-height:1.85;white-space:pre-wrap;color:var(--muted)}
-.term .p{color:var(--accent)} .term .o{color:var(--text)} .term .ok{color:var(--accent)} .term .b{color:var(--blue)}
-.cursor{display:inline-block;width:8px;height:15px;background:var(--accent);vertical-align:-2px;animation:blink 1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
-@media (max-width:900px){.hero{grid-template-columns:1fr;gap:40px;padding:56px 0 48px}}
-
-/* stats */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:16px;background:var(--surface);overflow:hidden}
-.stat{padding:24px;border-right:1px solid var(--line)}
-.stat:last-child{border-right:0}
-.stat b{display:block;font-size:clamp(28px,3.6vw,38px);letter-spacing:-.03em;font-weight:700}
-.stat b em{font-style:normal;color:var(--accent)}
-.stat span{font-size:13.5px;color:var(--muted)}
-@media (max-width:760px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
-
-/* sections */
-section{padding:112px 0 0}
-.kicker{font-family:var(--mono);font-size:13px;color:var(--accent)}
-h2{font-size:clamp(30px,4vw,44px);letter-spacing:-.03em;line-height:1.1;margin:8px 0 40px;font-weight:700}
-.card{position:relative;border:1px solid var(--line);border-radius:18px;background:var(--surface);padding:28px;transition:border-color .2s}
-.card:hover{border-color:var(--line-2)}
-.card::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;
-  background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(110,242,184,.07),transparent 45%)}
-.card:hover::before{opacity:1}
-.tag{display:inline-block;font-family:var(--mono);font-size:12px;color:var(--accent);background:var(--accent-dim);padding:4px 10px;border-radius:999px}
-.card h3{font-size:22px;letter-spacing:-.02em;margin:14px 0 10px;line-height:1.25}
-.card p{color:var(--muted);font-size:15.5px}
-.card ul{list-style:none;margin-top:16px;display:grid;gap:9px}
-.card li{position:relative;padding-left:22px;font-size:15px;color:#c3c8d1}
-.card li::before{content:"→";position:absolute;left:0;color:var(--accent);font-family:var(--mono);font-size:13px;top:1px}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:20px}
-.chips span{font-family:var(--mono);font-size:12px;color:var(--muted);border:1px solid var(--line-2);padding:3px 9px;border-radius:7px}
-
-.featured{display:grid;grid-template-columns:1fr 1.05fr;gap:36px;padding:32px;margin-bottom:20px}
-.featured h3{font-size:clamp(28px,3.4vw,36px)}
-.featured .btn{margin-top:26px}
-.shot{border:1px solid var(--line-2);border-radius:12px;overflow:hidden;background:var(--surface-2);align-self:center;transition:transform .3s}
-.featured:hover .shot{transform:translateY(-4px)}
-.shot .bar span{margin:0 auto}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-@media (max-width:960px){.featured{grid-template-columns:1fr;padding:24px}.grid3{grid-template-columns:1fr}}
-@media (min-width:640px) and (max-width:960px){.grid3{grid-template-columns:1fr 1fr}.grid3 .card:first-child{grid-column:1/-1}}
-
-/* skills */
-.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.skills h3{font-family:var(--mono);font-size:14px;font-weight:600;color:var(--text);margin:0 0 14px;display:flex;align-items:center;gap:8px}
-.skills h3::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--accent)}
-.skills .card:nth-child(2) h3::before{background:var(--blue)}
-.skills .card:nth-child(3) h3::before{background:#ffd166}
-.skills .card:nth-child(4) h3::before{background:#ff8fab}
-.skills .chips{margin-top:0}
-.skills .chips span{color:#c3c8d1}
-.content{margin-top:20px;display:flex;gap:24px;align-items:center}
-.content .ar{font-size:28px;font-weight:600;color:var(--accent);white-space:nowrap;font-family:system-ui,sans-serif}
-.content h3{margin:0 0 4px;font-size:18px}
-@media (max-width:960px){.skills{grid-template-columns:1fr 1fr}}
-@media (max-width:560px){.skills{grid-template-columns:1fr}.content{flex-direction:column;align-items:flex-start;gap:12px}}
-
-/* journey */
-.timeline{position:relative;display:grid;gap:14px;padding-left:28px}
-.timeline::before{content:"";position:absolute;left:7px;top:10px;bottom:10px;width:1px;background:linear-gradient(var(--accent),var(--line-2) 70%,transparent)}
-.step{position:relative;display:grid;grid-template-columns:120px 1fr;gap:20px;padding:22px 24px}
-.step::after{content:"";position:absolute;left:-26px;top:30px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
-.step.next::after{border-style:dashed;border-color:var(--muted)}
-.when{font-family:var(--mono);font-size:13px;color:var(--accent);padding-top:3px}
-.step h3{margin:0 0 6px;font-size:18px}
-.step p{font-size:15px}
-@media (max-width:640px){.step{grid-template-columns:1fr;gap:4px;padding:20px}}
-
-/* contact */
-.cta{text-align:center;padding:64px clamp(20px,5vw,64px);overflow:hidden}
-.cta::after{content:"";position:absolute;inset:auto 0 -60% 0;height:100%;background:radial-gradient(ellipse at center,rgba(110,242,184,.12),transparent 60%);pointer-events:none}
-.cta h2{margin:10px 0 14px;font-size:clamp(34px,5vw,56px)}
-.cta > p{max-width:32em;margin:0 auto}
-.contacts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:36px;position:relative;z-index:1}
-.contacts a{display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:18px 20px;border:1px solid var(--line-2);border-radius:14px;background:var(--surface-2);text-align:left;transition:border-color .15s,transform .15s}
-.contacts a:hover{border-color:var(--accent);transform:translateY(-2px)}
-.contacts small{font-family:var(--mono);font-size:12px;color:var(--muted)}
-.contacts b{font-weight:500;font-size:15px;word-break:break-all}
-@media (max-width:760px){.contacts{grid-template-columns:1fr}}
-footer{padding:56px 0 40px;color:var(--muted);font-size:13px;font-family:var(--mono);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-
-/* reveal */
-.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
-.js .reveal.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}.js .reveal{opacity:1;transform:none}}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress"></div>
+<canvas id="net" aria-hidden="true"></canvas>
 
 <nav>
   <div class="wrap">
     <a class="logo" href="#top"><span class="mark">CA</span>chabouti</a>
     <div class="links">
       <a href="#projects" data-i18n="nav.projects">Projects</a>
-      <a href="#skills" data-i18n="nav.skills">Skills</a>
+      <a href="#ai" data-i18n="nav.ai">AI</a>
+      <a href="#blog" data-i18n="nav.blog">Blog</a>
       <a href="#journey" data-i18n="nav.journey">Journey</a>
       <a href="#contact" data-i18n="nav.contact">Contact</a>
     </div>
@@ -179,46 +39,122 @@ footer{padding:56px 0 40px;color:var(--muted);font-size:13px;font-family:var(--m
 </nav>
 
 <main id="main" class="wrap">
+  <!-- ============ HERO ============ -->
   <header class="hero" id="top">
     <div>
       <a class="status" href="https://mybac-25n.pages.dev/" target="_blank" rel="noopener"><span class="dot"></span><span data-i18n="hero.status">THE SMART is live — 114 BAC papers online</span></a>
       <div class="monogram" aria-hidden="true">CA</div>
-      <h1>Chabouti<br>Abderrahim</h1>
+      <h1 id="name" aria-label="Chabouti Abderrahim">Chabouti<br>Abderrahim</h1>
       <p class="role" data-i18n="hero.role">&gt; AI &amp; Full-stack Founder</p>
-      <p class="lead" data-i18n="hero.lead">I build <strong>AI products that real people use</strong> — from an Arabic AI tutor for Algerian BAC students to Odoo 19 systems for a university group.</p>
+      <p class="lead" data-i18n="hero.lead">I build <strong>AI products that real people use</strong> — an Arabic AI tutor for Algerian BAC students, a patient–psychologist platform, and Odoo systems for a university group.</p>
+      <p class="now"><span data-i18n="hero.now">Right now:</span> <span class="rot" id="rot">growing THE SMART</span></p>
       <div class="ctas">
         <a class="btn primary" href="#projects" data-i18n="hero.cta1">See my work ↓</a>
-        <a class="btn" href="#contact" data-i18n="hero.cta2">Get in touch</a>
+        <a class="btn" href="#ai" data-i18n="hero.cta2">How my AI works</a>
       </div>
-      <p class="meta" data-i18n="hero.meta">📍 Algeria · Student at HIS · 2 years at ESI Sidi Bel Abbès</p>
+      <p class="meta" data-i18n="hero.meta">📍 Algiers, Algeria · Student at HIS · 2 years at ESI Sidi Bel Abbès</p>
     </div>
 
     <div class="term reveal" aria-label="Terminal summary">
       <div class="bar"><i></i><i></i><i></i><span>~/abderrahim</span></div>
-<pre><span class="p">~ $</span> <span class="o">whoami</span>
-founder @ <span class="b">THE SMART</span> · ai &amp; full-stack
-
-<span class="p">~ $</span> <span class="o">cat stack.txt</span>
-react · typescript · supabase · postgres
-python · odoo 19 · gemini · n8n · docker
-
-<span class="p">~ $</span> <span class="o">npm run security</span>
-<span class="ok">✓ 210 / 210 attacks blocked</span>
-
-<span class="p">~ $</span> <span class="cursor"></span></pre>
+      <div class="screen" id="term">
+        <span class="ln"><span class="p">~ $</span> <span class="o" data-type>whoami</span></span>
+        <span class="ln">abderrahim — founder @ <span class="b">THE SMART</span></span>
+        <span class="ln"></span>
+        <span class="ln"><span class="p">~ $</span> <span class="o" data-type>ls projects/</span></span>
+        <span class="ln">the-smart/  psyconnect/  his-odoo/  sandwitcha/</span>
+        <span class="ln"></span>
+        <span class="ln"><span class="p">~ $</span> <span class="o" data-type>npm run security</span></span>
+        <span class="ln"><span class="ok">✓ 210 / 210 attacks blocked</span></span>
+        <span class="ln"></span>
+        <span class="ln"><span class="p">~ $</span> <span class="o" data-type>ask-ai "lim (x²−1)/(x−1), x→1"</span></span>
+        <span class="ln">→ gemini-chat · cached · <span class="ok">2</span></span>
+        <span class="ln"></span>
+        <span class="ln"><span class="p">~ $</span> <span class="cursor"></span></span>
+      </div>
     </div>
   </header>
 
   <div class="stats reveal">
-    <div class="stat"><b>114</b><span data-i18n="stat.papers">BAC papers with solutions, back to 2008</span></div>
-    <div class="stat"><b>210</b><span data-i18n="stat.attacks">security attacks run on THE SMART, all blocked</span></div>
-    <div class="stat"><b>19<em>k</em></b><span data-i18n="stat.lines">lines of strict TypeScript</span></div>
-    <div class="stat"><b>68<em>+</em></b><span data-i18n="stat.tests">unit tests across my Odoo 19 modules</span></div>
+    <div class="stat"><b data-count="114">114</b><span data-i18n="stat.papers">BAC papers with solutions, back to 2008</span></div>
+    <div class="stat"><b data-count="210">210</b><span data-i18n="stat.attacks">security attacks run on THE SMART, all blocked</span></div>
+    <div class="stat"><b><span data-count="41">41</span><em>k</em></b><span data-i18n="stat.lines">lines of TypeScript across THE SMART and PsyConnect</span></div>
+    <div class="stat"><b data-count="4">4</b><span data-i18n="stat.ai">AI features live in production</span></div>
   </div>
 
+  <div class="marquee" aria-hidden="true">
+    <div class="track" id="track"><span>React</span><span>TypeScript</span><span>Supabase</span><span>PostgreSQL</span><span>Google Gemini</span><span>Python</span><span>Odoo 19</span><span>Docker</span><span>TanStack Start</span><span>Tailwind CSS</span><span>n8n</span><span>Cloudflare</span><span>Vercel</span><span>RFID</span><span>BPMN</span><span>Figma</span></div>
+  </div>
+
+  <!-- ============ AI ============ -->
+  <section id="ai">
+    <p class="kicker">// ai inside the startup</p>
+    <h2 data-i18n="ai.title">The AI inside THE SMART</h2>
+    <p class="sub" data-i18n="ai.sub">Every AI call in THE SMART goes through <strong>one server function</strong>. The browser never talks to Gemini and the API key never leaves the server — so cost, abuse and quality are controlled in one place.</p>
+
+    <div class="ai-top">
+      <div class="card chat reveal">
+        <div class="bar"><i></i><i></i><i></i><span data-i18n="ai.chat">AI tutor · maths · limits</span></div>
+        <div class="msgs" id="msgs" dir="rtl" lang="ar">
+          <div class="msg me">كيف أحسب نهاية <bdi>(x² − 1)/(x − 1)</bdi> عندما يؤول x إلى 1؟</div>
+          <div class="msg ai">
+            <span class="ans on">١. التعويض المباشر يعطي <bdi>0/0</bdi> — حالة عدم تعيين.</span>
+            <span class="ans on">٢. نحلّل البسط: <bdi>x² − 1 = (x − 1)(x + 1)</bdi></span>
+            <span class="ans on">٣. نختصر على <bdi>(x − 1)</bdi> فيبقى <bdi>x + 1</bdi></span>
+            <span class="ans on">٤. النهاية = <bdi>1 + 1 = 2</bdi> <b class="ok">✓</b></span>
+          </div>
+        </div>
+        <p class="cap" data-i18n="ai.cap">Answers in Arabic with Latin notation, step by step — the way a BAC paper is written.</p>
+      </div>
+
+      <div class="card pipe reveal">
+        <h3 data-i18n="ai.pipe">One door for every AI call</h3>
+        <div class="node"><span class="n">01</span><div><b data-i18n="n1.t">Student</b><p data-i18n="n1.d">asks a question, opens a mistake or a BAC paper</p></div></div>
+        <div class="link"><i></i></div>
+        <div class="node"><span class="n">02</span><div><b>gemini-chat</b><p data-i18n="n2.d">session + premium check · 60 calls per rolling 24 h · input caps · closed subject list</p></div></div>
+        <div class="link"><i></i></div>
+        <div class="node"><span class="n">03</span><div><b data-i18n="n3.t">Cache first</b><p data-i18n="n3.d">each paper is solved once, then shared by every student</p></div></div>
+        <div class="link"><i></i></div>
+        <div class="node"><span class="n">04</span><div><b>Gemini</b><p data-i18n="n4.d">5-model fallback chain: on 429, 503 or timeout, the next model answers</p></div></div>
+      </div>
+    </div>
+
+    <div class="features">
+      <div class="card feature reveal">
+        <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+        <h3 data-i18n="f1.t">AI tutor</h3>
+        <p data-i18n="f1.d">Multi-turn Arabic chat tied to a subject and chapter from a closed list — no free text reaches the prompt through them, so no prompt injection there.</p>
+      </div>
+      <div class="card feature reveal">
+        <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg></span>
+        <h3 data-i18n="f2.t">Explain my mistake</h3>
+        <p data-i18n="f2.d">Explains a question the student got wrong. Ownership is checked on the server: a wrong id and someone else’s id both return 404. Saved, so reopening costs nothing.</p>
+      </div>
+      <div class="card feature reveal">
+        <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg></span>
+        <h3 data-i18n="f3.t">AI flashcards</h3>
+        <p data-i18n="f3.d">5–10 cards for one chapter in schema-constrained JSON, de-duplicated against the student’s deck. One malformed card rejects the whole batch.</p>
+      </div>
+      <div class="card feature reveal">
+        <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg></span>
+        <h3 data-i18n="f4.t">AI exam solver</h3>
+        <p data-i18n="f4.d">The one multimodal call: the paper’s PDF goes to Gemini as a native attachment. Grounded in the official solution when it exists, solved from scratch when not — and the student sees which.</p>
+      </div>
+    </div>
+
+    <div class="card freetier reveal">
+      <div><h3 data-i18n="ft.t">Built to run on Gemini’s free tier</h3><a class="more" href="blog/ai-tutor.html" data-i18n="ft.more">Read the full write-up →</a></div>
+      <p data-i18n="ft.1">Quota is charged before the call, so a failing generation can’t loop for free.</p>
+      <p data-i18n="ft.2">A prewarm script solves every paper ahead of time — students get cached answers instantly.</p>
+      <p data-i18n="ft.3">SSRF guard on paper URLs: https only, no localhost, private ranges or cloud metadata (169.254.*).</p>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
   <section id="projects">
     <p class="kicker">// projects</p>
     <h2 data-i18n="projects.title">Selected work</h2>
+    <p class="sub" data-i18n="projects.sub">A startup, a client platform, an internship on a real ERP, and the smaller things that taught me along the way.</p>
 
     <article class="card featured reveal">
       <div>
@@ -226,13 +162,16 @@ python · odoo 19 · gemini · n8n · docker
         <h3>THE SMART</h3>
         <p data-i18n="smart.desc">An Arabic-first exam-prep platform for the Algerian baccalauréat. Students practise on real past papers, take a daily quiz, follow chapter-ordered lessons and ask an AI tutor that answers the way an exam paper is written.</p>
         <ul>
-          <li data-i18n="smart.b1">AI tutor and exam solver on Google Gemini, with solutions pre-computed and cached for every paper</li>
+          <li data-i18n="smart.b1">Four AI features on Google Gemini: tutor, mistake explainer, flashcard generator and exam solver</li>
           <li data-i18n="smart.b2">Grading runs inside Postgres — the answer key never reaches the browser</li>
           <li data-i18n="smart.b3">210 attack tests as real signed-in users: privilege escalation, IDOR, score forgery, SSRF</li>
           <li data-i18n="smart.b4">Flashcards, mistake log, spaced review, weekly reports, leaderboard and streaks</li>
         </ul>
         <div class="chips"><span>React</span><span>TypeScript</span><span>Tailwind</span><span>Supabase</span><span>PostgreSQL · RLS</span><span>Edge Functions</span><span>Gemini</span><span>Cloudflare</span></div>
-        <a class="btn primary" href="https://mybac-25n.pages.dev/" target="_blank" rel="noopener" data-i18n="smart.cta">Visit the live site ↗</a>
+        <div class="actions">
+          <a class="btn primary" href="https://mybac-25n.pages.dev/" target="_blank" rel="noopener" data-i18n="smart.cta">Visit the live site ↗</a>
+          <a class="btn" href="#ai" data-i18n="smart.cta2">How the AI works ↑</a>
+        </div>
       </div>
       <a class="shot" href="https://mybac-25n.pages.dev/" target="_blank" rel="noopener" aria-label="THE SMART live site">
         <div class="bar"><i></i><i></i><i></i><span>mybac-25n.pages.dev</span></div>
@@ -240,54 +179,116 @@ python · odoo 19 · gemini · n8n · docker
       </a>
     </article>
 
+    <article class="card featured rev reveal">
+      <div>
+        <span class="tag lav" data-i18n="psy.tag">Freelance · Client platform</span>
+        <h3>PsyConnect</h3>
+        <p data-i18n="psy.desc">A full platform that connects patients with verified psychologists. I’m building it for a client on a 3-month, milestone-based contract — from Figma design to production deploy.</p>
+        <ul>
+          <li data-i18n="psy.b1">Three spaces — patient, psychologist, admin — plus an onboarding flow where credentials are reviewed before a psychologist goes live</li>
+          <li data-i18n="psy.b2">Branching intake assessment: the questions live in the database as a graph, and each answer leads to the next question</li>
+          <li data-i18n="psy.b3">Search, booking against real availability, sessions, realtime messaging and private clinical notes</li>
+          <li data-i18n="psy.b4">Admin back-office: verification, appointments, payments and payouts, reports, support tickets</li>
+          <li data-i18n="psy.b5">Arabic and English, with strict isolation of medical data</li>
+        </ul>
+        <div class="chips"><span>TanStack Start</span><span>React</span><span>TypeScript</span><span>Supabase</span><span>Realtime</span><span>i18n AR/EN</span><span>Figma</span></div>
+        <div class="facts"><span><b>40</b> migrations</span><span><b>~22k</b> <span data-i18n="psy.lines">lines of TypeScript</span></span></div>
+        <ol class="miles">
+          <li><b data-i18n="psy.m1d">Jul 2026</b><span data-i18n="psy.m1">Design validated</span></li>
+          <li><b data-i18n="psy.m2d">Sep 2026</b><span data-i18n="psy.m2">Beta</span></li>
+          <li><b data-i18n="psy.m3d">Oct 2026</b><span data-i18n="psy.m3">Launch (planned)</span></li>
+        </ol>
+      </div>
+      <div class="mock" aria-hidden="true">
+        <div class="bar"><i></i><i></i><i></i><span>psyconnect · patient</span></div>
+        <div class="mock-body">
+          <div class="m-row">
+            <div class="m-card hi"><small>Next session</small><b>Thu · 14:00</b>Video consultation</div>
+            <div class="m-card"><small>Intake assessment</small><div class="m-bar"><i></i></div>Question 6 of 9</div>
+          </div>
+          <div class="m-chat">
+            <p class="in">How have you been since our last session?</p>
+            <p class="out">Better — the breathing exercise really helps.</p>
+            <span class="typing"><i></i><i></i><i></i></span>
+          </div>
+          <div class="m-pills"><span>✓ Verified psychologist</span><span>Private notes</span><span>AR · EN</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card his reveal">
+      <span class="tag warm" data-i18n="his.tag">Internship · Groupe HIS-HTC-IRA · Aug–Sep 2026</span>
+      <h3 data-i18n="his.title">Odoo 19 platform for a university group</h3>
+      <p data-i18n="his.desc">I joined a three-developer team building the group’s ERP on Odoo 19 Community — custom modules on the official Docker image, no fork. Together, the platform replaced a GoHighLevel CRM and an Excel admissions workbook. The modules I owned:</p>
+      <div class="mods">
+        <div class="mod"><h4 data-i18n="m1.t">RFID meal credits</h4><p data-i18n="m1.d">The card holds only an ID; credits live on the server. One meal = one credit, an append-only ledger, row locks so two tills can’t spend the last credit, and a Postgres CHECK that makes a negative balance impossible. 43 tests, proven on real RFID hardware.</p></div>
+        <div class="mod"><h4 data-i18n="m2.t">University maintenance</h4><p data-i18n="m2.d">Requests, inspections, findings and a dashboard — with a reporter role, a submit workflow, multi-photo reports and a “My Work” day view for technicians.</p></div>
+        <div class="mod"><h4 data-i18n="m3.t">Campus+ teacher recruitment</h4><p data-i18n="m3.d">Web form → scoring engine → per-campaign ranking → an 8-step hiring sequence enforced in Python, so no script can skip a step.</p></div>
+        <div class="mod"><h4 data-i18n="m4.t">POS identity &amp; procurement</h4><p data-i18n="m4.d">The HIS visual identity across three touch-friendly tills, and the procurement-needs (besoin d’achat) models.</p></div>
+      </div>
+      <div class="chips"><span>Python</span><span>Odoo 19</span><span>PostgreSQL</span><span>Docker</span><span>RFID</span><span>BPMN</span><span>Team Git</span></div>
+      <a class="more" href="blog/rfid-meal-credits.html" data-i18n="his.more">How the meal-credit system works →</a>
+    </article>
+
     <div class="grid3">
       <article class="card reveal">
-        <span class="tag" data-i18n="odoo.tag">Internship · Groupe HIS-HTC-IRA</span>
-        <h3 data-i18n="odoo.title">Odoo 19 modules for a university group</h3>
-        <p data-i18n="odoo.desc">Custom Odoo 19 Community modules on the official Docker image — no fork to maintain.</p>
-        <ul>
-          <li data-i18n="odoo.b1">Stock &amp; POS catalogue governance, valuation, losses</li>
-          <li data-i18n="odoo.b2">Identity core: one institutional ID per person</li>
-          <li data-i18n="odoo.b3">HR and Google Sheets sync into the person registry</li>
-          <li data-i18n="odoo.b4">University maintenance: requests, inspections, dashboard</li>
-          <li data-i18n="odoo.b5">Procurement and recruitment processes modelled in BPMN</li>
-        </ul>
-        <div class="chips"><span>Python</span><span>Odoo 19</span><span>PostgreSQL</span><span>Docker</span><span>BPMN</span></div>
+        <a class="thumb" href="https://sandwitcha.vercel.app" target="_blank" rel="noopener"><img src="assets/sandwitcha.png" width="1440" height="900" loading="lazy" alt="SANDWITCHA home page: a burger and the headline Plaisir à chaque bouchée"></a>
+        <span class="tag warm" data-i18n="sw.tag">Client · Restaurant</span>
+        <h3>SANDWITCHA</h3>
+        <p data-i18n="sw.desc">Online ordering for a sandwich shop: customers order online, pick up at the counter and follow their order live; staff run everything from a private space with roles in the database.</p>
+        <div class="chips"><span>TanStack Start</span><span>Supabase Realtime</span><span>Vercel</span></div>
+        <a class="more" href="https://sandwitcha.vercel.app" target="_blank" rel="noopener" data-i18n="sw.cta">Visit the live site ↗</a>
       </article>
 
       <article class="card reveal">
-        <span class="tag" data-i18n="psy.tag">Product · Health</span>
-        <h3>PsyConnect</h3>
-        <p data-i18n="psy.desc">A patient–psychologist platform that connects people with psychologists, from finding the right one to booking and holding consultations.</p>
+        <span class="tag" data-i18n="auto.tag">AI · Automation</span>
+        <h3 data-i18n="auto.title">n8n AI agents &amp; automations</h3>
+        <p data-i18n="auto.desc">A documentation-expert chatbot built with RAG, plus workflows that move data between business tools so nobody retypes it.</p>
         <ul>
-          <li data-i18n="psy.b1">Patient and psychologist sides in one app</li>
-          <li data-i18n="psy.b2">Booking and consultation flow</li>
-          <li data-i18n="psy.b3">Product proposal written end to end</li>
+          <li data-i18n="auto.b1">Scheduled crawl of the docs → split → Gemini embeddings → Supabase vector store</li>
+          <li data-i18n="auto.b2">A chat agent with memory that answers only from the indexed docs</li>
+          <li data-i18n="auto.b3">Self-hosted n8n: triggers and schedules instead of copy-paste</li>
         </ul>
-        <div class="chips"><span>Product design</span><span>Web app</span><span>Healthcare</span></div>
+        <div class="chips"><span>n8n</span><span>RAG</span><span>Gemini embeddings</span><span>Supabase pgvector</span></div>
       </article>
 
       <article class="card reveal">
-        <span class="tag" data-i18n="auto.tag">Automation · Web</span>
-        <h3 data-i18n="auto.title">n8n automations &amp; client sites</h3>
-        <p data-i18n="auto.desc">Business workflows that move data between Google Sheets, email and business tools so nobody retypes it — plus fast websites for clients.</p>
+        <span class="tag lav" data-i18n="web.tag">Web</span>
+        <h3 data-i18n="web.title">Client websites</h3>
+        <p data-i18n="web.desc">Fast, responsive landing pages built static-first — like two sites for a chess coach — deployed on Vercel or Pages.</p>
         <ul>
-          <li data-i18n="auto.b1">n8n workflows for day-to-day business operations</li>
-          <li data-i18n="auto.b2">Landing site for a chess coach</li>
-          <li data-i18n="auto.b3">Static and Next.js sites, deployed on Vercel or Pages</li>
+          <li data-i18n="web.b1">Semantic HTML, CSS and a little JS; no framework when none is needed</li>
+          <li data-i18n="web.b2">Next.js + Tailwind when the site needs to grow</li>
+          <li data-i18n="web.b3">Mobile-first, deployed from Git</li>
         </ul>
-        <div class="chips"><span>n8n</span><span>Google Sheets</span><span>HTML/CSS/JS</span><span>Next.js</span></div>
+        <div class="chips"><span>HTML/CSS/JS</span><span>Next.js</span><span>Tailwind</span></div>
       </article>
+    </div>
+
+    <div class="archive reveal">
+      <h3 data-i18n="arc.title">Earlier &amp; side projects</h3>
+      <div class="arow"><span>2025</span><b data-i18n="a1.t">mybac v1</b><p data-i18n="a1.d">The first THE SMART: a Gemini chatbot, quizzes and alumni pages, deployed on Vercel.</p></div>
+      <div class="arow"><span>2025</span><b data-i18n="a2.t">AMD product showcase</b><p data-i18n="a2.d">A React + TypeScript product site for AMD’s lineup — a UI study.</p></div>
+      <div class="arow"><span>Django</span><b data-i18n="a3.t">University management system</b><p data-i18n="a3.d">Courses, grades, notes, specialities and users, built with Django.</p></div>
+      <div class="arow"><span>ESI</span><b data-i18n="a4.t">Algorithms in Pascal &amp; C</b><p data-i18n="a4.d">Coursework and TPs: the fundamentals, written by hand.</p></div>
+      <div class="arow"><span data-i18n="a5.y">Self-study</span><b data-i18n="a5.t">Machine learning in Python</b><p data-i18n="a5.d">TensorFlow, NumPy and pandas experiments alongside the Stanford CS229 lectures.</p></div>
     </div>
   </section>
 
-  <section id="skills">
-    <p class="kicker">// skills</p>
-    <h2 data-i18n="skills.title">What I work with</h2>
+  <!-- ============ HOW I WORK + SKILLS ============ -->
+  <section id="how">
+    <p class="kicker">// how i work</p>
+    <h2 data-i18n="how.title">AI-native, human-checked</h2>
+    <p class="sub" data-i18n="how.sub">I use AI to move fast, and engineering discipline to make what it builds safe to ship.</p>
+    <div class="how">
+      <div class="card reveal"><span class="num">01</span><h3 data-i18n="w1.t">Prototype fast with AI</h3><p data-i18n="w1.d">Lovable and Google Stitch for first screens, Claude Code and Cursor for the engineering. A working version in days, not months.</p></div>
+      <div class="card reveal"><span class="num">02</span><h3 data-i18n="w2.t">Then harden it</h3><p data-i18n="w2.d">Strict TypeScript as a build gate, attack suites that run as real signed-in users, DAST scans, and every rule with a value enforced on the server — never in the browser.</p></div>
+      <div class="card reveal"><span class="num">03</span><h3 data-i18n="w3.t">Write it down</h3><p data-i18n="w3.d">Every project ships a README plus a HANDOVER or DEVELOPMENT file that says which parts look wrong but are deliberate — for the next human or AI.</p></div>
+    </div>
     <div class="skills">
-      <div class="card reveal"><h3 data-i18n="skills.ai">AI &amp; ML</h3><div class="chips"><span>Gemini API</span><span>LLM prompting</span><span>Python</span><span>NumPy</span><span>pandas</span><span>TensorFlow</span><span>Stanford CS229</span></div></div>
-      <div class="card reveal"><h3 data-i18n="skills.web">Full-stack web</h3><div class="chips"><span>React</span><span>TypeScript</span><span>Vite</span><span>Next.js</span><span>Tailwind</span><span>shadcn/ui</span><span>Supabase</span><span>PostgreSQL</span></div></div>
-      <div class="card reveal"><h3 data-i18n="skills.biz">Business systems</h3><div class="chips"><span>Odoo 19</span><span>n8n</span><span>BPMN</span><span>Google Sheets API</span><span>ERP data models</span></div></div>
+      <div class="card reveal"><h3 data-i18n="skills.ai">AI &amp; ML</h3><div class="chips"><span>Gemini API</span><span>LLM prompting</span><span>JSON schemas</span><span>RAG · embeddings</span><span>Python</span><span>NumPy</span><span>pandas</span><span>TensorFlow</span><span>Stanford CS229</span></div></div>
+      <div class="card reveal"><h3 data-i18n="skills.web">Full-stack web</h3><div class="chips"><span>React</span><span>TypeScript</span><span>Vite</span><span>TanStack Start</span><span>Next.js</span><span>Tailwind</span><span>Supabase</span><span>PostgreSQL</span><span>Django</span></div></div>
+      <div class="card reveal"><h3 data-i18n="skills.biz">Business systems</h3><div class="chips"><span>Odoo 19</span><span>POS</span><span>RFID</span><span>n8n</span><span>BPMN</span><span>Google Sheets API</span></div></div>
       <div class="card reveal"><h3 data-i18n="skills.ship">Ship &amp; secure</h3><div class="chips"><span>Docker</span><span>Git · GitHub</span><span>Cloudflare Pages</span><span>Vercel</span><span>Row-level security</span><span>DAST scans</span></div></div>
     </div>
     <div class="card content reveal">
@@ -295,22 +296,70 @@ python · odoo 19 · gemini · n8n · docker
       <div>
         <h3 data-i18n="content.title">I also explain AI in Arabic</h3>
         <p data-i18n="content.desc">I’m making short Arabic videos for students on how tools like ChatGPT actually “understand” us — to make AI less magic and more learnable.</p>
+        <a class="more" href="blog/how-llms-understand.html" data-i18n="content.more">Read the written version →</a>
       </div>
     </div>
   </section>
 
-  <section id="journey">
-    <p class="kicker">// journey</p>
-    <h2 data-i18n="journey.title">How I got here</h2>
-    <div class="timeline">
-      <div class="card step reveal"><span class="when" data-i18n="j1.when">2 years</span><div><h3>ESI Sidi Bel Abbès</h3><p data-i18n="j1.desc">Two years at one of Algeria’s top computer-science engineering schools: algorithms, C, Pascal, maths — and the habit of going deep.</p></div></div>
-      <div class="card step reveal"><span class="when" data-i18n="j2.when">Sep 2025</span><div><h3 data-i18n="j2.title">First version of mybac ships</h3><p data-i18n="j2.desc">React, Supabase and a Gemini chatbot, live on Vercel. The seed of THE SMART.</p></div></div>
-      <div class="card step reveal"><span class="when">2026</span><div><h3 data-i18n="j3.title">HIS &amp; internship at Groupe HIS-HTC-IRA</h3><p data-i18n="j3.desc">Moved to HIS. Built Odoo 19 modules for the group’s stock, identity, HR and maintenance, and modelled its processes in BPMN.</p></div></div>
-      <div class="card step reveal"><span class="when" data-i18n="j4.when">Sep 2026</span><div><h3 data-i18n="j4.title">THE SMART relaunch</h3><p data-i18n="j4.desc">Rebuilt from the ground up: server-side grading, AI exam solver, personal AI flashcards, a full security audit and a Cloudflare deploy.</p></div></div>
-      <div class="card step next reveal"><span class="when" data-i18n="j5.when">Next</span><div><h3 data-i18n="j5.title">More AI products people actually use</h3><p data-i18n="j5.desc">Growing THE SMART into the go-to study tool for Algerian students — and building the next one.</p></div></div>
+  <!-- ============ BLOG ============ -->
+  <section id="blog">
+    <p class="kicker">// blog</p>
+    <h2 data-i18n="blog.title">Notes from building</h2>
+    <p class="sub" data-i18n="blog.sub">Real stories from my projects: what I built, what broke, and what I’d do again.</p>
+    <div class="posts">
+      <a class="card post-card reveal" href="blog/ai-tutor.html">
+        <span class="tag">AI</span>
+        <span class="pmeta">Sep 2026 · 7 min<span data-i18n="blog.en"></span></span>
+        <h3 data-i18n="p1.t">One function, four modes: the AI inside THE SMART</h3>
+        <p data-i18n="p1.d">How a single server function runs the tutor, the mistake explainer, flashcards and a multimodal exam solver on Gemini’s free tier — without leaking the key or the budget.</p>
+        <span class="read" data-i18n="read">Read <i>→</i></span>
+      </a>
+      <a class="card post-card reveal" href="blog/attack-my-own-app.html">
+        <span class="tag warm" data-i18n="p2.tag">Security</span>
+        <span class="pmeta">Sep 2026 · 6 min<span data-i18n="blog.en2"></span></span>
+        <h3 data-i18n="p2.t">I attacked my own app 210 times</h3>
+        <p data-i18n="p2.d">55 fake users, 205 attacks, and the leaderboard exploit that justified all of it.</p>
+        <span class="read" data-i18n="read2">Read <i>→</i></span>
+      </a>
+      <a class="card post-card reveal" href="blog/rfid-meal-credits.html">
+        <span class="tag lav">Odoo</span>
+        <span class="pmeta">Sep 2026 · 6 min<span data-i18n="blog.en3"></span></span>
+        <h3 data-i18n="p3.t">One meal, one credit: RFID meal cards on Odoo 19</h3>
+        <p data-i18n="p3.d">Four independent guarantees that keep a university’s meal credits honest.</p>
+        <span class="read" data-i18n="read3">Read <i>→</i></span>
+      </a>
+      <a class="card post-card reveal" href="blog/db-reset.html">
+        <span class="tag warm" data-i18n="p4.tag">Postmortem</span>
+        <span class="pmeta">Sep 2026 · 4 min<span data-i18n="blog.en4"></span></span>
+        <h3 data-i18n="p4.t">The day db reset wiped my accounts</h3>
+        <p data-i18n="p4.d">Two self-inflicted outages in one week, and the checklist I wrote after.</p>
+        <span class="read" data-i18n="read4">Read <i>→</i></span>
+      </a>
+      <a class="card post-card reveal" href="blog/how-llms-understand.html">
+        <span class="tag">AI</span>
+        <span class="pmeta">Sep 2026 · 5 min<span data-i18n="blog.en5"></span></span>
+        <h3 data-i18n="p5.t">Does ChatGPT really understand us?</h3>
+        <p data-i18n="p5.d">A student-friendly explanation of how large language models work, with a short Arabic summary.</p>
+        <span class="read" data-i18n="read5">Read <i>→</i></span>
+      </a>
     </div>
   </section>
 
+  <!-- ============ JOURNEY ============ -->
+  <section id="journey">
+    <p class="kicker">// journey</p>
+    <h2 data-i18n="journey.title">How I got here</h2>
+    <div class="timeline" style="margin-top:40px">
+      <div class="card step reveal"><span class="when" data-i18n="j1.when">2 years</span><div><h3>ESI Sidi Bel Abbès</h3><p data-i18n="j1.desc">Two years at one of Algeria’s top computer-science engineering schools: algorithms, C, Pascal, maths — and the habit of going deep.</p></div></div>
+      <div class="card step reveal"><span class="when" data-i18n="j2.when">Sep 2025</span><div><h3 data-i18n="j2.title">First version of mybac ships</h3><p data-i18n="j2.desc">React, Supabase and a Gemini chatbot, live on Vercel. The seed of THE SMART.</p></div></div>
+      <div class="card step reveal"><span class="when" data-i18n="j3.when">Jul 2026</span><div><h3 data-i18n="j3.title">First freelance platform: PsyConnect</h3><p data-i18n="j3.desc">A milestone-based contract with a client: Figma design first, then the build on TanStack Start and Supabase.</p></div></div>
+      <div class="card step reveal"><span class="when" data-i18n="j4.when">Aug 2026</span><div><h3 data-i18n="j4.title">HIS &amp; internship at Groupe HIS-HTC-IRA</h3><p data-i18n="j4.desc">Moved to HIS and joined the Odoo team: RFID meal credits, university maintenance, teacher recruitment.</p></div></div>
+      <div class="card step reveal"><span class="when" data-i18n="j5.when">Sep 2026</span><div><h3 data-i18n="j5.title">SANDWITCHA live, THE SMART relaunched</h3><p data-i18n="j5.desc">Shipped a restaurant ordering site, and rebuilt THE SMART: server-side grading, AI exam solver, AI flashcards, a full security audit and a Cloudflare deploy.</p></div></div>
+      <div class="card step next reveal"><span class="when" data-i18n="j6.when">Next</span><div><h3 data-i18n="j6.title">More AI products people actually use</h3><p data-i18n="j6.desc">Growing THE SMART into the go-to study tool for Algerian students — and building the next one.</p></div></div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
   <section id="contact">
     <div class="card cta reveal">
       <p class="kicker">// contact</p>
@@ -332,96 +381,301 @@ python · odoo 19 · gemini · n8n · docker
 
 <script>
 document.documentElement.classList.add("js");
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const wait = ms => new Promise(r => setTimeout(r, ms));
 
+/* ---------- i18n ---------- */
 const FR = {
-  "nav.projects": "Projets", "nav.skills": "Compétences", "nav.journey": "Parcours", "nav.contact": "Contact",
+  "nav.projects": "Projets", "nav.ai": "IA", "nav.blog": "Blog", "nav.journey": "Parcours", "nav.contact": "Contact",
   "hero.status": "THE SMART est en ligne — 114 sujets du BAC",
   "hero.role": "&gt; Fondateur · IA &amp; Full-stack",
-  "hero.lead": "Je construis des <strong>produits IA utilisés par de vraies personnes</strong> — d’un tuteur IA en arabe pour les bacheliers algériens aux modules Odoo 19 d’un groupe universitaire.",
-  "hero.cta1": "Voir mes projets ↓", "hero.cta2": "Me contacter",
-  "hero.meta": "📍 Algérie · Étudiant à HIS · 2 ans à l’ESI Sidi Bel Abbès",
+  "hero.lead": "Je construis des <strong>produits IA utilisés par de vraies personnes</strong> — un tuteur IA en arabe pour les bacheliers algériens, une plateforme patients–psychologues et des systèmes Odoo pour un groupe universitaire.",
+  "hero.now": "En ce moment :",
+  "hero.cta1": "Voir mes projets ↓", "hero.cta2": "Comment marche mon IA",
+  "hero.meta": "📍 Alger, Algérie · Étudiant à HIS · 2 ans à l’ESI Sidi Bel Abbès",
   "stat.papers": "sujets du BAC corrigés, depuis 2008",
   "stat.attacks": "attaques testées sur THE SMART, toutes bloquées",
-  "stat.lines": "lignes de TypeScript strict",
-  "stat.tests": "tests unitaires sur mes modules Odoo 19",
+  "stat.lines": "lignes de TypeScript entre THE SMART et PsyConnect",
+  "stat.ai": "fonctionnalités IA en production",
+  "ai.title": "L’IA au cœur de THE SMART",
+  "ai.sub": "Chaque appel IA de THE SMART passe par <strong>une seule fonction serveur</strong>. Le navigateur ne parle jamais à Gemini et la clé d’API ne quitte jamais le serveur — coût, abus et qualité se contrôlent en un seul endroit.",
+  "ai.chat": "Tuteur IA · maths · limites",
+  "ai.cap": "Répond en arabe avec la notation latine, étape par étape — comme une copie du BAC.",
+  "ai.pipe": "Une seule porte pour chaque appel IA",
+  "n1.t": "Élève", "n1.d": "pose une question, ouvre une erreur ou un sujet du BAC",
+  "n2.d": "session + vérification premium · 60 appels par 24 h glissantes · limites d’entrée · liste fermée de matières",
+  "n3.t": "Cache d’abord", "n3.d": "chaque sujet est résolu une fois, puis partagé par tous les élèves",
+  "n4.d": "5 modèles en relais : sur 429, 503 ou délai dépassé, le suivant répond",
+  "f1.t": "Tuteur IA",
+  "f1.d": "Chat en arabe sur plusieurs tours, lié à une matière et un chapitre choisis dans une liste fermée — aucun texte libre n’atteint le prompt par là, donc pas d’injection.",
+  "f2.t": "Explique-moi mon erreur",
+  "f2.d": "Explique une question ratée. La propriété est vérifiée côté serveur : un id inexistant et l’id d’un autre élève renvoient tous deux 404. Mis en cache : le rouvrir ne coûte rien.",
+  "f3.t": "Flashcards IA",
+  "f3.d": "5 à 10 cartes pour un chapitre en JSON contraint par schéma, dédoublonnées avec le paquet de l’élève. Une seule carte mal formée rejette tout le lot.",
+  "f4.t": "Solveur d’examens IA",
+  "f4.d": "Le seul appel multimodal : le PDF du sujet part chez Gemini en pièce jointe native. Appuyé sur le corrigé officiel s’il existe, résolu de zéro sinon — et l’élève voit lequel.",
+  "ft.t": "Conçu pour l’offre gratuite de Gemini",
+  "ft.more": "Lire l’article complet →",
+  "ft.1": "Le quota est décompté avant l’appel : une génération qui échoue ne peut pas boucler gratuitement.",
+  "ft.2": "Un script de préchauffage résout chaque sujet à l’avance — les élèves reçoivent des réponses en cache, instantanément.",
+  "ft.3": "Garde SSRF sur les URL des sujets : https uniquement, ni localhost, ni réseaux privés, ni métadonnées cloud (169.254.*).",
   "projects.title": "Projets choisis",
+  "projects.sub": "Une startup, une plateforme client, un stage sur un vrai ERP, et les projets plus petits qui m’ont appris en chemin.",
   "smart.tag": "Startup · Fondateur",
   "smart.desc": "Plateforme de préparation au baccalauréat algérien, pensée d’abord en arabe. Les élèves s’entraînent sur de vrais sujets, font un quiz quotidien, suivent des cours rangés par chapitre et interrogent un tuteur IA qui répond comme une copie d’examen.",
-  "smart.b1": "Tuteur IA et solveur d’examens avec Google Gemini, solutions pré-calculées et mises en cache pour chaque sujet",
+  "smart.b1": "Quatre fonctionnalités IA avec Google Gemini : tuteur, explication d’erreurs, générateur de flashcards et solveur d’examens",
   "smart.b2": "La correction s’exécute dans Postgres — le corrigé n’atteint jamais le navigateur",
   "smart.b3": "210 tests d’attaque en tant que vrais utilisateurs : élévation de privilèges, IDOR, falsification de score, SSRF",
   "smart.b4": "Flashcards, carnet d’erreurs, révision espacée, rapports hebdomadaires, classement et séries",
-  "smart.cta": "Voir le site en ligne ↗",
-  "odoo.tag": "Stage · Groupe HIS-HTC-IRA",
-  "odoo.title": "Modules Odoo 19 pour un groupe universitaire",
-  "odoo.desc": "Modules Odoo 19 Community sur l’image Docker officielle — aucun fork à maintenir.",
-  "odoo.b1": "Gouvernance du catalogue stock &amp; PDV, valorisation, pertes",
-  "odoo.b2": "Socle identité : un matricule unique par personne",
-  "odoo.b3": "RH et synchronisation Google Sheets vers le référentiel personnes",
-  "odoo.b4": "Maintenance universitaire : demandes, inspections, tableau de bord",
-  "odoo.b5": "Processus achats et recrutement modélisés en BPMN",
-  "psy.tag": "Produit · Santé",
-  "psy.desc": "Une plateforme patients–psychologues qui met les gens en relation avec un psychologue, de la recherche du bon praticien à la prise de rendez-vous et aux consultations.",
-  "psy.b1": "Espace patient et espace psychologue dans une seule app",
-  "psy.b2": "Parcours de réservation et de consultation",
-  "psy.b3": "Proposition produit rédigée de bout en bout",
-  "auto.tag": "Automatisation · Web",
-  "auto.title": "Automatisations n8n &amp; sites clients",
-  "auto.desc": "Des workflows qui font circuler les données entre Google Sheets, l’e-mail et les outils métier, pour que personne ne les ressaisisse — et des sites rapides pour des clients.",
-  "auto.b1": "Workflows n8n pour les opérations quotidiennes",
-  "auto.b2": "Site vitrine pour un coach d’échecs",
-  "auto.b3": "Sites statiques et Next.js, déployés sur Vercel ou Pages",
-  "skills.title": "Mes outils",
+  "smart.cta": "Voir le site en ligne ↗", "smart.cta2": "Comment marche l’IA ↑",
+  "psy.tag": "Freelance · Plateforme client",
+  "psy.desc": "Une plateforme complète qui met en relation des patients avec des psychologues vérifiés. Je la construis pour un client, dans un contrat de 3 mois par jalons — de la maquette Figma au déploiement en production.",
+  "psy.b1": "Trois espaces — patient, psychologue, admin — et un parcours d’onboarding où les diplômes sont vérifiés avant la mise en ligne d’un psychologue",
+  "psy.b2": "Évaluation d’accueil à embranchements : les questions sont stockées en base sous forme de graphe, chaque réponse mène à la question suivante",
+  "psy.b3": "Recherche, réservation selon les vraies disponibilités, séances, messagerie en temps réel et notes cliniques privées",
+  "psy.b4": "Back-office : vérification, rendez-vous, paiements et reversements, rapports, tickets de support",
+  "psy.b5": "Arabe et anglais, avec un cloisonnement strict des données médicales",
+  "psy.lines": "lignes de TypeScript",
+  "psy.m1d": "Juil. 2026", "psy.m1": "Design validé",
+  "psy.m2d": "Sept. 2026", "psy.m2": "Bêta",
+  "psy.m3d": "Oct. 2026", "psy.m3": "Mise en ligne (prévue)",
+  "his.tag": "Stage · Groupe HIS-HTC-IRA · août–sept. 2026",
+  "his.title": "Plateforme Odoo 19 pour un groupe universitaire",
+  "his.desc": "J’ai rejoint une équipe de trois développeurs qui construit l’ERP du groupe sur Odoo 19 Community — des modules sur mesure sur l’image Docker officielle, sans fork. Ensemble, la plateforme a remplacé un CRM GoHighLevel et un classeur Excel d’admissions. Les modules dont j’avais la charge :",
+  "m1.t": "Crédits repas RFID",
+  "m1.d": "La carte ne porte qu’un identifiant ; les crédits vivent sur le serveur. Un repas = un crédit, un registre en ajout seul, des verrous pour que deux caisses ne dépensent pas le dernier crédit, et un CHECK Postgres qui rend un solde négatif impossible. 43 tests, validés sur un vrai lecteur RFID.",
+  "m2.t": "Maintenance universitaire",
+  "m2.d": "Demandes, inspections, constats et tableau de bord — avec un rôle déclarant, un circuit de soumission, des rapports multi-photos et une vue « Mon travail » du jour pour les techniciens.",
+  "m3.t": "Recrutement enseignants Campus+",
+  "m3.d": "Formulaire web → moteur de notation → classement par campagne → une séquence d’embauche en 8 étapes imposée en Python, qu’aucun script ne peut sauter.",
+  "m4.t": "Identité PDV &amp; achats",
+  "m4.d": "L’identité visuelle HIS sur trois caisses tactiles, et les modèles de besoins d’achat.",
+  "his.more": "Comment marche le système de crédits repas →",
+  "sw.tag": "Client · Restauration",
+  "sw.desc": "Commande en ligne pour un snack : les clients commandent en ligne, récupèrent au comptoir et suivent leur commande en direct ; l’équipe gère tout depuis un espace privé, avec des rôles en base.",
+  "sw.cta": "Voir le site en ligne ↗",
+  "auto.tag": "IA · Automatisation",
+  "auto.title": "Agents IA &amp; automatisations n8n",
+  "auto.desc": "Un chatbot expert d’une documentation construit en RAG, et des workflows qui font circuler les données entre outils métier pour que personne ne les ressaisisse.",
+  "auto.b1": "Crawl planifié de la doc → découpage → embeddings Gemini → base vectorielle Supabase",
+  "auto.b2": "Un agent conversationnel avec mémoire qui ne répond qu’à partir de la doc indexée",
+  "auto.b3": "n8n auto-hébergé : déclencheurs et planifications au lieu du copier-coller",
+  "web.tag": "Web",
+  "web.title": "Sites clients",
+  "web.desc": "Des pages rapides et responsive, construites en statique d’abord — comme deux sites pour un coach d’échecs — déployées sur Vercel ou Pages.",
+  "web.b1": "HTML sémantique, CSS et un peu de JS ; pas de framework quand il n’en faut pas",
+  "web.b2": "Next.js + Tailwind quand le site doit grandir",
+  "web.b3": "Mobile d’abord, déployé depuis Git",
+  "arc.title": "Projets antérieurs &amp; annexes",
+  "a1.t": "mybac v1", "a1.d": "Le premier THE SMART : un chatbot Gemini, des quiz et des pages anciens élèves, déployé sur Vercel.",
+  "a2.t": "Vitrine produits AMD", "a2.d": "Un site produit React + TypeScript pour la gamme AMD — une étude d’interface.",
+  "a3.t": "Système de gestion universitaire", "a3.d": "Cours, notes, spécialités et utilisateurs, construit avec Django.",
+  "a4.t": "Algorithmique en Pascal &amp; C", "a4.d": "Cours et TP : les bases, écrites à la main.",
+  "a5.y": "Autodidacte", "a5.t": "Machine learning en Python", "a5.d": "Expériences TensorFlow, NumPy et pandas, en parallèle des cours Stanford CS229.",
+  "how.title": "Natif IA, vérifié par un humain",
+  "how.sub": "J’utilise l’IA pour aller vite, et la rigueur d’ingénieur pour que ce qu’elle construit puisse partir en production.",
+  "w1.t": "Prototyper vite avec l’IA",
+  "w1.d": "Lovable et Google Stitch pour les premiers écrans, Claude Code et Cursor pour l’ingénierie. Une version qui marche en jours, pas en mois.",
+  "w2.t": "Puis la durcir",
+  "w2.d": "TypeScript strict comme barrière de build, suites d’attaques jouées par de vrais utilisateurs connectés, scans DAST, et toute règle qui a une valeur appliquée côté serveur — jamais dans le navigateur.",
+  "w3.t": "Tout documenter",
+  "w3.d": "Chaque projet livre un README et un fichier HANDOVER ou DEVELOPMENT qui dit quelles parties semblent fausses mais sont voulues — pour le prochain humain ou la prochaine IA.",
   "skills.ai": "IA &amp; ML", "skills.web": "Web full-stack", "skills.biz": "Systèmes métier", "skills.ship": "Livrer &amp; sécuriser",
   "content.title": "J’explique aussi l’IA en arabe",
   "content.desc": "Je prépare de courtes vidéos en arabe pour les étudiants sur la façon dont des outils comme ChatGPT nous « comprennent » — pour rendre l’IA moins magique et plus accessible.",
+  "content.more": "Lire la version écrite →",
+  "blog.title": "Carnet de bord",
+  "blog.sub": "Des histoires vraies tirées de mes projets : ce que j’ai construit, ce qui a cassé, et ce que je referais.",
+  "blog.en": " · en anglais", "blog.en2": " · en anglais", "blog.en3": " · en anglais", "blog.en4": " · en anglais", "blog.en5": " · en anglais",
+  "p1.t": "Une fonction, quatre modes : l’IA de THE SMART",
+  "p1.d": "Comment une seule fonction serveur fait tourner le tuteur, l’explication d’erreurs, les flashcards et un solveur d’examens multimodal sur l’offre gratuite de Gemini — sans fuite de clé ni de budget.",
+  "p2.tag": "Sécurité", "p2.t": "J’ai attaqué ma propre app 210 fois",
+  "p2.d": "55 faux utilisateurs, 205 attaques, et la faille du classement qui a tout justifié.",
+  "p3.t": "Un repas, un crédit : cartes repas RFID sur Odoo 19",
+  "p3.d": "Quatre garanties indépendantes qui gardent honnêtes les crédits repas d’une université.",
+  "p4.tag": "Post-mortem", "p4.t": "Le jour où db reset a effacé mes comptes",
+  "p4.d": "Deux pannes auto-infligées en une semaine, et la checklist écrite juste après.",
+  "p5.t": "ChatGPT nous comprend-il vraiment ?",
+  "p5.d": "Une explication accessible du fonctionnement des grands modèles de langage, avec un court résumé en arabe.",
+  "read": "Lire <i>→</i>", "read2": "Lire <i>→</i>", "read3": "Lire <i>→</i>", "read4": "Lire <i>→</i>", "read5": "Lire <i>→</i>",
   "journey.title": "Mon parcours",
   "j1.when": "2 ans",
   "j1.desc": "Deux ans dans l’une des meilleures écoles d’ingénieurs en informatique d’Algérie : algorithmique, C, Pascal, maths — et l’habitude d’aller au fond des choses.",
-  "j2.when": "Sept. 2025",
-  "j2.title": "Première version de mybac en ligne",
+  "j2.when": "Sept. 2025", "j2.title": "Première version de mybac en ligne",
   "j2.desc": "React, Supabase et un chatbot Gemini, en ligne sur Vercel. La graine de THE SMART.",
-  "j3.title": "HIS &amp; stage au Groupe HIS-HTC-IRA",
-  "j3.desc": "Passage à HIS. Développement de modules Odoo 19 pour le stock, l’identité, les RH et la maintenance du groupe, et modélisation de ses processus en BPMN.",
-  "j4.when": "Sept. 2026",
-  "j4.title": "Relance de THE SMART",
-  "j4.desc": "Reconstruit de zéro : correction côté serveur, solveur d’examens IA, flashcards IA personnelles, audit de sécurité complet et déploiement Cloudflare.",
-  "j5.when": "Ensuite",
-  "j5.title": "D’autres produits IA vraiment utilisés",
-  "j5.desc": "Faire de THE SMART l’outil de révision de référence des élèves algériens — et construire le suivant.",
+  "j3.when": "Juil. 2026", "j3.title": "Première plateforme freelance : PsyConnect",
+  "j3.desc": "Un contrat par jalons avec un client : le design Figma d’abord, puis le développement sur TanStack Start et Supabase.",
+  "j4.when": "Août 2026", "j4.title": "HIS &amp; stage au Groupe HIS-HTC-IRA",
+  "j4.desc": "Passage à HIS et arrivée dans l’équipe Odoo : crédits repas RFID, maintenance universitaire, recrutement des enseignants.",
+  "j5.when": "Sept. 2026", "j5.title": "SANDWITCHA en ligne, THE SMART relancé",
+  "j5.desc": "Livraison d’un site de commande pour un restaurant, et reconstruction de THE SMART : correction côté serveur, solveur d’examens IA, flashcards IA, audit de sécurité complet et déploiement Cloudflare.",
+  "j6.when": "Ensuite", "j6.title": "D’autres produits IA vraiment utilisés",
+  "j6.desc": "Faire de THE SMART l’outil de révision de référence des élèves algériens — et construire le suivant.",
   "contact.title": "Construisons quelque chose.",
   "contact.desc": "Ouvert aux stages, missions freelance et collaborations startup. WhatsApp ou e-mail : c’est le plus rapide.",
   "footer": "codé à la main · hébergé sur GitHub Pages"
 };
-
+const ROT = {
+  en: ["growing THE SMART", "shipping PsyConnect", "building AI features on Gemini", "explaining AI in Arabic"],
+  fr: ["je fais grandir THE SMART", "je livre PsyConnect", "je construis des fonctionnalités IA avec Gemini", "j’explique l’IA en arabe"]
+};
 const nodes = document.querySelectorAll("[data-i18n]");
 const EN = {};
 nodes.forEach(el => EN[el.dataset.i18n] = el.innerHTML);
+const rot = document.getElementById("rot");
+let lang = "en";
 
-function setLang(lang) {
-  const dict = lang === "fr" ? FR : EN;
+function setLang(l) {
+  lang = l;
+  const dict = l === "fr" ? FR : EN;
   nodes.forEach(el => { const t = dict[el.dataset.i18n]; if (t != null) el.innerHTML = t; });
-  document.documentElement.lang = lang;
-  document.querySelectorAll("[data-lang]").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang));
-  try { localStorage.setItem("lang", lang); } catch (e) {}
+  document.documentElement.lang = l;
+  document.querySelectorAll("[data-lang]").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === l));
+  if (reduced) rot.textContent = ROT[l][0];
+  try { localStorage.setItem("lang", l); } catch (e) {}
 }
 document.querySelectorAll("[data-lang]").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
 let saved = null;
 try { saved = localStorage.getItem("lang"); } catch (e) {}
 setLang(saved || ((navigator.language || "").toLowerCase().startsWith("fr") ? "fr" : "en"));
 
-// cursor glow on cards
+/* ---------- scroll progress ---------- */
+const bar = document.getElementById("progress");
+addEventListener("scroll", () => {
+  const h = document.documentElement;
+  bar.style.transform = `scaleX(${h.scrollTop / (h.scrollHeight - h.clientHeight) || 0})`;
+}, { passive: true });
+
+/* ---------- neural-net background ---------- */
+const cv = document.getElementById("net"), ctx = cv.getContext("2d");
+const dpr = Math.min(devicePixelRatio || 1, 2);
+let W, H, pts = [], mouse = { x: -1e4, y: -1e4 };
+function resize() {
+  W = cv.width = innerWidth * dpr; H = cv.height = innerHeight * dpr;
+  cv.style.width = innerWidth + "px"; cv.style.height = innerHeight + "px";
+  const n = Math.min(70, Math.round(innerWidth * innerHeight / 22000));
+  pts = Array.from({ length: n }, () => ({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .3 * dpr, vy: (Math.random() - .5) * .3 * dpr }));
+}
+function frame() {
+  ctx.clearRect(0, 0, W, H);
+  const R = 130 * dpr, M = R * 1.5;
+  ctx.lineWidth = dpr;
+  // ponytail: O(n²) pair scan, fine for ≤70 nodes; use a grid if the count grows
+  for (let i = 0; i < pts.length; i++) {
+    const a = pts[i];
+    if (!reduced) { a.x += a.vx; a.y += a.vy; if (a.x < 0 || a.x > W) a.vx *= -1; if (a.y < 0 || a.y > H) a.vy *= -1; }
+    for (let j = i + 1; j < pts.length; j++) {
+      const b = pts[j], d = Math.hypot(a.x - b.x, a.y - b.y);
+      if (d < R) { ctx.strokeStyle = `rgba(110,242,184,${.16 * (1 - d / R)})`; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
+    }
+    const dm = Math.hypot(a.x - mouse.x, a.y - mouse.y);
+    if (dm < M) { ctx.strokeStyle = `rgba(138,180,255,${.35 * (1 - dm / M)})`; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke(); }
+    ctx.fillStyle = "rgba(110,242,184,.5)"; ctx.fillRect(a.x - dpr, a.y - dpr, 2 * dpr, 2 * dpr);
+  }
+  if (!reduced) requestAnimationFrame(frame);
+}
+addEventListener("resize", () => { resize(); if (reduced) frame(); });
+addEventListener("pointermove", e => { mouse.x = e.clientX * dpr; mouse.y = e.clientY * dpr; });
+resize(); frame();
+
+/* ---------- hero: name letters, terminal, rotating word ---------- */
+const h1 = document.getElementById("name");
+if (!reduced) {
+  let k = 0;
+  h1.innerHTML = h1.innerHTML.split("<br>").map(line =>
+    [...line].map(c => `<span class="ch" style="--i:${k++}" aria-hidden="true">${c}</span>`).join("")).join("<br>");
+}
+
+const lines = [...document.querySelectorAll("#term .ln")];
+(async () => {
+  if (reduced) { lines.forEach(l => l.classList.add("on")); return; }
+  await wait(700);
+  for (const ln of lines) {
+    const t = ln.querySelector("[data-type]");
+    ln.classList.add("on");
+    if (t) {
+      const full = t.textContent; t.textContent = "";
+      for (const c of full) { t.textContent += c; await wait(40); }
+      await wait(280);
+    } else await wait(110);
+  }
+})();
+
+(async () => {
+  if (reduced) return;
+  for (let i = 0; ; i++) {
+    const w = ROT[lang][i % ROT[lang].length];
+    for (let k = 1; k <= w.length; k++) { rot.textContent = w.slice(0, k); await wait(45); }
+    await wait(1900);
+    for (let k = w.length; k >= 0; k--) { rot.textContent = w.slice(0, k); await wait(22); }
+    await wait(300);
+  }
+})();
+
+/* ---------- AI tutor chat demo ---------- */
+const msgs = document.getElementById("msgs");
+const QUESTION = msgs.querySelector(".me").innerHTML;
+const STEPS = [...msgs.querySelectorAll(".ans")].map(s => s.innerHTML);
+async function chatLoop() {
+  for (;;) {
+    msgs.innerHTML = `<div class="msg me">${QUESTION}</div>`;
+    await wait(900);
+    const ai = document.createElement("div");
+    ai.className = "msg ai";
+    ai.innerHTML = `<span class="typing"><i></i><i></i><i></i></span>`;
+    msgs.append(ai);
+    await wait(1400);
+    ai.innerHTML = STEPS.map(s => `<span class="ans">${s}</span>`).join("");
+    for (const s of ai.children) { await wait(80); s.classList.add("on"); await wait(620); }
+    await wait(5200);
+  }
+}
+
+/* ---------- counters ---------- */
+function countUp(el) {
+  const end = +el.dataset.count, t0 = performance.now();
+  const tick = t => {
+    const p = Math.min((t - t0) / 1500, 1);
+    el.textContent = Math.round(end * (1 - (1 - p) ** 3));
+    if (p < 1) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+}
+
+/* ---------- reveal on scroll (with stagger) ---------- */
+const reveals = document.querySelectorAll(".reveal");
+reveals.forEach(el => {
+  const sibs = [...el.parentElement.children].filter(c => c.classList.contains("reveal"));
+  el.style.setProperty("--d", Math.min(sibs.indexOf(el), 5) * 90 + "ms");
+});
+let chatStarted = false;
+const io = new IntersectionObserver(entries => entries.forEach(e => {
+  if (!e.isIntersecting) return;
+  e.target.classList.add("in");
+  io.unobserve(e.target);
+  if (!reduced) e.target.querySelectorAll("[data-count]").forEach(countUp);
+  if (!reduced && !chatStarted && e.target.contains(msgs)) { chatStarted = true; chatLoop(); }
+}), { threshold: 0.15 });
+reveals.forEach(el => io.observe(el));
+
+/* ---------- marquee, card glow, screenshot tilt ---------- */
+const track = document.getElementById("track");
+track.innerHTML += track.innerHTML;
+
 document.querySelectorAll(".card").forEach(c => c.addEventListener("pointermove", e => {
   const r = c.getBoundingClientRect();
   c.style.setProperty("--mx", e.clientX - r.left + "px");
   c.style.setProperty("--my", e.clientY - r.top + "px");
 }));
 
-// reveal on scroll
-const io = new IntersectionObserver(es => es.forEach(e => {
-  if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
-}), { threshold: 0.12 });
-document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+if (!reduced) document.querySelectorAll(".shot").forEach(s => {
+  s.addEventListener("pointermove", e => {
+    const r = s.getBoundingClientRect();
+    s.style.setProperty("--ry", ((e.clientX - r.left) / r.width - .5) * 8 + "deg");
+    s.style.setProperty("--rx", -((e.clientY - r.top) / r.height - .5) * 8 + "deg");
+  });
+  s.addEventListener("pointerleave", () => { s.style.removeProperty("--rx"); s.style.removeProperty("--ry"); });
+});
 </script>
 </body>
 </html>
