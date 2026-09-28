@@ -31,18 +31,18 @@ npm run types:gen</code></pre>
     <p>Back up, then apply only what’s new. <code>db reset</code> is for empty stacks.</p>
 
     <h2>Same week: the AI went silent</h2>
-    <p>All four AI features stopped at once, and 14 security tests failed with them. The code was fine. Docker had crashed when the disk filled up, and when it came back, every container restarted — except <code>supabase_edge_runtime_mybac</code>, the one that runs the AI function. It sat at <code>Exited (255)</code>.</p>
-    <p>Worse: <code>npx supabase start</code> reported that it had handled it. It hadn’t. A plain <code>docker start supabase_edge_runtime_mybac</code> did. The tutor answered in 2.7 seconds, and the security suite went back to green.</p>
+    <p>All four AI features stopped at once, and 14 security tests failed with them. The code was fine. Docker had crashed when the disk filled up, and when it came back, every container restarted — except the one that runs the AI service. It sat at <code>Exited (255)</code>.</p>
+    <p>Worse: the stack’s start command reported that it had handled it. It hadn’t. A plain <code>docker start</code> on that one container did. The tutor answered in 2.7 seconds, and the security suite went back to green.</p>
 
     <h2>Why it took longer than it should have</h2>
-    <p>Every failure inside the function collapsed into the same generic <code>500</code>: an invalid key, a missing key, an unreachable server, malformed JSON — all identical from the client. The real cause only showed in the server logs. And old logs stay visible even when the container is dead, so without <code>--since</code> you can spend an afternoon diagnosing yesterday’s error.</p>
+    <p>Every failure inside the AI service collapsed into the same generic <code>500</code>: an invalid key, a missing key, an unreachable server, malformed JSON — all identical from the client. The real cause only showed in the server logs. And old logs stay visible even when the container is dead, so without <code>--since</code> you can spend an afternoon diagnosing yesterday’s error.</p>
 
     <h2>The checklist I wrote afterwards</h2>
     <ol>
-      <li><strong>The container first, always.</strong> <code>docker ps -a | grep edge</code> — if it says <code>Exited</code>, that’s your answer and everything else is a waste of time.</li>
-      <li><strong>Fresh logs only.</strong> <code>docker logs supabase_edge_runtime_mybac --since 5m</code>.</li>
-      <li><strong>Is the key there?</strong> <code>supabase/functions/.env</code> → <code>GEMINI_API_KEY</code>. A missing key looks like any other 500.</li>
-      <li><strong>Is Gemini reachable?</strong> <code>curl -sI https://generativelanguage.googleapis.com/</code> — a quick answer means the network is fine and the problem is elsewhere.</li>
+      <li><strong>The container first, always.</strong> <code>docker ps -a</code> — if the AI container says <code>Exited</code>, that’s your answer and everything else is a waste of time.</li>
+      <li><strong>Fresh logs only.</strong> <code>docker logs &lt;container&gt; --since 5m</code>.</li>
+      <li><strong>Are the secrets there?</strong> A missing key looks like any other 500.</li>
+      <li><strong>Is the network fine?</strong> One quick request out of the server tells you whether the problem is local.</li>
       <li><strong>One real end-to-end call</strong> as a premium user. Healthy is a <code>200</code> in about 3 seconds.</li>
     </ol>
     <p>And the root cause that keeps coming back: <strong>a full disk</strong>.</p>

@@ -26,7 +26,6 @@
     <a class="logo" href="#top"><span class="mark">CA</span>chabouti</a>
     <div class="links">
       <a href="#projects" data-i18n="nav.projects">Projects</a>
-      <a href="#ai" data-i18n="nav.ai">AI</a>
       <a href="blog/index.html" data-i18n="nav.blog">Blog</a>
       <a href="#journey" data-i18n="nav.journey">Journey</a>
       <a href="#contact" data-i18n="nav.contact">Contact</a>
@@ -50,7 +49,7 @@
       <p class="now"><span data-i18n="hero.now">Right now:</span> <span class="rot" id="rot">growing THE SMART</span></p>
       <div class="ctas">
         <a class="btn primary" href="#projects" data-i18n="hero.cta1">See my work ↓</a>
-        <a class="btn" href="#ai" data-i18n="hero.cta2">How my AI works</a>
+        <a class="btn" href="blog/the-smart-ai.html" data-i18n="hero.cta2">Meet THE SMART AI</a>
       </div>
       <p class="meta" data-i18n="hero.meta">📍 Algiers, Algeria · Student at HIS · 2 years at ESI Sidi Bel Abbès</p>
     </div>
@@ -68,7 +67,7 @@
         <span class="ln"><span class="ok">✓ 210 / 210 attacks blocked</span></span>
         <span class="ln"></span>
         <span class="ln"><span class="p">~ $</span> <span class="o" data-type>ask-ai "lim (x²−1)/(x−1), x→1"</span></span>
-        <span class="ln">→ gemini-chat · cached · <span class="ok">2</span></span>
+        <span class="ln">→ the-smart-ai · step by step · <span class="ok">2</span></span>
         <span class="ln"></span>
         <span class="ln"><span class="p">~ $</span> <span class="cursor"></span></span>
       </div>
@@ -83,72 +82,8 @@
   </div>
 
   <div class="marquee" aria-hidden="true">
-    <div class="track" id="track"><span>React</span><span>TypeScript</span><span>Supabase</span><span>PostgreSQL</span><span>Google Gemini</span><span>Python</span><span>Odoo 19</span><span>Docker</span><span>TanStack Start</span><span>Tailwind CSS</span><span>n8n</span><span>Cloudflare</span><span>Vercel</span><span>RFID</span><span>BPMN</span><span>Figma</span></div>
+    <div class="track" id="track"><span>React</span><span>TypeScript</span><span>Supabase</span><span>PostgreSQL</span><span>Python</span><span>Odoo 19</span><span>Docker</span><span>TanStack Start</span><span>Tailwind CSS</span><span>n8n</span><span>Cloudflare</span><span>Vercel</span><span>RFID</span><span>BPMN</span><span>Figma</span></div>
   </div>
-
-  <!-- ============ AI ============ -->
-  <section id="ai">
-    <p class="kicker">// ai inside the startup</p>
-    <h2 data-i18n="ai.title">The AI inside THE SMART</h2>
-    <p class="sub" data-i18n="ai.sub">Every AI call in THE SMART goes through <strong>one server function</strong>. The browser never talks to Gemini and the API key never leaves the server — so cost, abuse and quality are controlled in one place.</p>
-
-    <div class="ai-top">
-      <div class="card chat reveal">
-        <div class="bar"><i></i><i></i><i></i><span data-i18n="ai.chat">AI tutor · maths · limits</span></div>
-        <div class="msgs" id="msgs" dir="rtl" lang="ar">
-          <div class="msg me">كيف أحسب نهاية <bdi>(x² − 1)/(x − 1)</bdi> عندما يؤول x إلى 1؟</div>
-          <div class="msg ai">
-            <span class="ans on">١. التعويض المباشر يعطي <bdi>0/0</bdi> — حالة عدم تعيين.</span>
-            <span class="ans on">٢. نحلّل البسط: <bdi>x² − 1 = (x − 1)(x + 1)</bdi></span>
-            <span class="ans on">٣. نختصر على <bdi>(x − 1)</bdi> فيبقى <bdi>x + 1</bdi></span>
-            <span class="ans on">٤. النهاية = <bdi>1 + 1 = 2</bdi> <b class="ok">✓</b></span>
-          </div>
-        </div>
-        <p class="cap" data-i18n="ai.cap">Answers in Arabic with Latin notation, step by step — the way a BAC paper is written.</p>
-      </div>
-
-      <div class="card pipe reveal">
-        <h3 data-i18n="ai.pipe">One door for every AI call</h3>
-        <div class="node"><span class="n">01</span><div><b data-i18n="n1.t">Student</b><p data-i18n="n1.d">asks a question, opens a mistake or a BAC paper</p></div></div>
-        <div class="link"><i></i></div>
-        <div class="node"><span class="n">02</span><div><b>gemini-chat</b><p data-i18n="n2.d">session + premium check · 60 calls per rolling 24 h · input caps · closed subject list</p></div></div>
-        <div class="link"><i></i></div>
-        <div class="node"><span class="n">03</span><div><b data-i18n="n3.t">Cache first</b><p data-i18n="n3.d">each paper is solved once, then shared by every student</p></div></div>
-        <div class="link"><i></i></div>
-        <div class="node"><span class="n">04</span><div><b>Gemini</b><p data-i18n="n4.d">5-model fallback chain: on 429, 503 or timeout, the next model answers</p></div></div>
-      </div>
-    </div>
-
-    <div class="features">
-      <div class="card feature reveal">
-        <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
-        <h3 data-i18n="f1.t">AI tutor</h3>
-        <p data-i18n="f1.d">Multi-turn Arabic chat tied to a subject and chapter from a closed list — no free text reaches the prompt through them, so no prompt injection there.</p>
-      </div>
-      <div class="card feature reveal">
-        <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg></span>
-        <h3 data-i18n="f2.t">Explain my mistake</h3>
-        <p data-i18n="f2.d">Explains a question the student got wrong. Ownership is checked on the server: a wrong id and someone else’s id both return 404. Saved, so reopening costs nothing.</p>
-      </div>
-      <div class="card feature reveal">
-        <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg></span>
-        <h3 data-i18n="f3.t">AI flashcards</h3>
-        <p data-i18n="f3.d">5–10 cards for one chapter in schema-constrained JSON, de-duplicated against the student’s deck. One malformed card rejects the whole batch.</p>
-      </div>
-      <div class="card feature reveal">
-        <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg></span>
-        <h3 data-i18n="f4.t">AI exam solver</h3>
-        <p data-i18n="f4.d">The one multimodal call: the paper’s PDF goes to Gemini as a native attachment. Grounded in the official solution when it exists, solved from scratch when not — and the student sees which.</p>
-      </div>
-    </div>
-
-    <div class="card freetier reveal">
-      <div><h3 data-i18n="ft.t">Built to run on Gemini’s free tier</h3><a class="more" href="blog/ai-tutor.html" data-i18n="ft.more">Read the full write-up →</a></div>
-      <p data-i18n="ft.1">Quota is charged before the call, so a failing generation can’t loop for free.</p>
-      <p data-i18n="ft.2">A prewarm script solves every paper ahead of time — students get cached answers instantly.</p>
-      <p data-i18n="ft.3">SSRF guard on paper URLs: https only, no localhost, private ranges or cloud metadata (169.254.*).</p>
-    </div>
-  </section>
 
   <!-- ============ PROJECTS ============ -->
   <section id="projects">
@@ -162,15 +97,15 @@
         <h3>THE SMART</h3>
         <p data-i18n="smart.desc">An Arabic-first exam-prep platform for the Algerian baccalauréat. Students practise on real past papers, take a daily quiz, follow chapter-ordered lessons and ask an AI tutor that answers the way an exam paper is written.</p>
         <ul>
-          <li data-i18n="smart.b1">Four AI features on Google Gemini: tutor, mistake explainer, flashcard generator and exam solver</li>
+          <li data-i18n="smart.b1">Four AI features: tutor, mistake explainer, flashcard generator and exam solver</li>
           <li data-i18n="smart.b2">Grading runs inside Postgres — the answer key never reaches the browser</li>
-          <li data-i18n="smart.b3">210 attack tests as real signed-in users: privilege escalation, IDOR, score forgery, SSRF</li>
+          <li data-i18n="smart.b3">210 attack tests as real signed-in users: privilege escalation, IDOR, score forgery, premium bypass</li>
           <li data-i18n="smart.b4">Flashcards, mistake log, spaced review, weekly reports, leaderboard and streaks</li>
         </ul>
-        <div class="chips"><span>React</span><span>TypeScript</span><span>Tailwind</span><span>Supabase</span><span>PostgreSQL · RLS</span><span>Edge Functions</span><span>Gemini</span><span>Cloudflare</span></div>
+        <div class="chips"><span>React</span><span>TypeScript</span><span>Tailwind</span><span>Supabase</span><span>PostgreSQL · RLS</span><span>THE SMART AI</span><span>Cloudflare</span></div>
         <div class="actions">
           <a class="btn primary" href="https://mybac-25n.pages.dev/" target="_blank" rel="noopener" data-i18n="smart.cta">Visit the live site ↗</a>
-          <a class="btn" href="#ai" data-i18n="smart.cta2">How the AI works ↑</a>
+          <a class="btn" href="blog/the-smart-ai.html" data-i18n="smart.cta2">Meet THE SMART AI →</a>
         </div>
       </div>
       <a class="shot" href="https://mybac-25n.pages.dev/" target="_blank" rel="noopener" aria-label="THE SMART live site">
@@ -245,11 +180,11 @@
         <h3 data-i18n="auto.title">n8n AI agents &amp; automations</h3>
         <p data-i18n="auto.desc">A documentation-expert chatbot built with RAG, plus workflows that move data between business tools so nobody retypes it.</p>
         <ul>
-          <li data-i18n="auto.b1">Scheduled crawl of the docs → split → Gemini embeddings → Supabase vector store</li>
+          <li data-i18n="auto.b1">Scheduled crawl of the docs → split → embeddings → vector store</li>
           <li data-i18n="auto.b2">A chat agent with memory that answers only from the indexed docs</li>
           <li data-i18n="auto.b3">Self-hosted n8n: triggers and schedules instead of copy-paste</li>
         </ul>
-        <div class="chips"><span>n8n</span><span>RAG</span><span>Gemini embeddings</span><span>Supabase pgvector</span></div>
+        <div class="chips"><span>n8n</span><span>RAG</span><span>Embeddings</span><span>Vector search</span></div>
       </article>
 
       <article class="card reveal">
@@ -267,7 +202,7 @@
 
     <div class="archive reveal">
       <h3 data-i18n="arc.title">Earlier &amp; side projects</h3>
-      <div class="arow"><span>2025</span><b data-i18n="a1.t">mybac v1</b><p data-i18n="a1.d">The first THE SMART: a Gemini chatbot, quizzes and alumni pages, deployed on Vercel.</p></div>
+      <div class="arow"><span>2025</span><b data-i18n="a1.t">mybac v1</b><p data-i18n="a1.d">The first THE SMART: an AI chatbot, quizzes and alumni pages, deployed on Vercel.</p></div>
       <div class="arow"><span>2025</span><b data-i18n="a2.t">AMD product showcase</b><p data-i18n="a2.d">A React + TypeScript product site for AMD’s lineup — a UI study.</p></div>
       <div class="arow"><span>Django</span><b data-i18n="a3.t">University management system</b><p data-i18n="a3.d">Courses, grades, notes, specialities and users, built with Django.</p></div>
       <div class="arow"><span>ESI</span><b data-i18n="a4.t">Algorithms in Pascal &amp; C</b><p data-i18n="a4.d">Coursework and TPs: the fundamentals, written by hand.</p></div>
@@ -286,7 +221,7 @@
       <div class="card reveal"><span class="num">03</span><h3 data-i18n="w3.t">Write it down</h3><p data-i18n="w3.d">Every project ships a README plus a HANDOVER or DEVELOPMENT file that says which parts look wrong but are deliberate — for the next human or AI.</p></div>
     </div>
     <div class="skills">
-      <div class="card reveal"><h3 data-i18n="skills.ai">AI &amp; ML</h3><div class="chips"><span>Gemini API</span><span>LLM prompting</span><span>JSON schemas</span><span>RAG · embeddings</span><span>Python</span><span>NumPy</span><span>pandas</span><span>TensorFlow</span><span>Stanford CS229</span></div></div>
+      <div class="card reveal"><h3 data-i18n="skills.ai">AI &amp; ML</h3><div class="chips"><span>LLM APIs</span><span>Prompt design</span><span>JSON schemas</span><span>RAG · embeddings</span><span>Python</span><span>NumPy</span><span>pandas</span><span>TensorFlow</span><span>Stanford CS229</span></div></div>
       <div class="card reveal"><h3 data-i18n="skills.web">Full-stack web</h3><div class="chips"><span>React</span><span>TypeScript</span><span>Vite</span><span>TanStack Start</span><span>Next.js</span><span>Tailwind</span><span>Supabase</span><span>PostgreSQL</span><span>Django</span></div></div>
       <div class="card reveal"><h3 data-i18n="skills.biz">Business systems</h3><div class="chips"><span>Odoo 19</span><span>POS</span><span>RFID</span><span>n8n</span><span>BPMN</span><span>Google Sheets API</span></div></div>
       <div class="card reveal"><h3 data-i18n="skills.ship">Ship &amp; secure</h3><div class="chips"><span>Docker</span><span>Git · GitHub</span><span>Cloudflare Pages</span><span>Vercel</span><span>Row-level security</span><span>DAST scans</span></div></div>
@@ -319,7 +254,7 @@
     <h2 data-i18n="journey.title">How I got here</h2>
     <div class="timeline" style="margin-top:40px">
       <div class="card step reveal"><span class="when" data-i18n="j1.when">2 years</span><div><h3>ESI Sidi Bel Abbès</h3><p data-i18n="j1.desc">Two years at one of Algeria’s top computer-science engineering schools: algorithms, C, Pascal, maths — and the habit of going deep.</p></div></div>
-      <div class="card step reveal"><span class="when" data-i18n="j2.when">Sep 2025</span><div><h3 data-i18n="j2.title">First version of mybac ships</h3><p data-i18n="j2.desc">React, Supabase and a Gemini chatbot, live on Vercel. The seed of THE SMART.</p></div></div>
+      <div class="card step reveal"><span class="when" data-i18n="j2.when">Sep 2025</span><div><h3 data-i18n="j2.title">First version of mybac ships</h3><p data-i18n="j2.desc">React, Supabase and an AI chatbot, live on Vercel. The seed of THE SMART.</p></div></div>
       <div class="card step reveal"><span class="when" data-i18n="j3.when">Jul 2026</span><div><h3 data-i18n="j3.title">First freelance platform: PsyConnect</h3><p data-i18n="j3.desc">A milestone-based contract with a client: Figma design first, then the build on TanStack Start and Supabase.</p></div></div>
       <div class="card step reveal"><span class="when" data-i18n="j4.when">Aug 2026</span><div><h3 data-i18n="j4.title">HIS &amp; internship at Groupe HIS-HTC-IRA</h3><p data-i18n="j4.desc">Moved to HIS and joined the Odoo team: RFID meal credits, university maintenance, teacher recruitment.</p></div></div>
       <div class="card step reveal"><span class="when" data-i18n="j5.when">Sep 2026</span><div><h3 data-i18n="j5.title">SANDWITCHA live, THE SMART relaunched</h3><p data-i18n="j5.desc">Shipped a restaurant ordering site, and rebuilt THE SMART: server-side grading, AI exam solver, AI flashcards, a full security audit and a Cloudflare deploy.</p></div></div>
@@ -354,48 +289,26 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
 
 /* ---------- i18n ---------- */
 const FR = {
-  "nav.projects": "Projets", "nav.ai": "IA", "nav.blog": "Blog", "nav.journey": "Parcours", "nav.contact": "Contact",
+  "nav.projects": "Projets", "nav.blog": "Blog", "nav.journey": "Parcours", "nav.contact": "Contact",
   "hero.status": "THE SMART est en ligne — 114 sujets du BAC",
   "hero.role": "&gt; Fondateur · IA &amp; Full-stack",
   "hero.lead": "Je construis des <strong>produits IA utilisés par de vraies personnes</strong> — un tuteur IA en arabe pour les bacheliers algériens, une plateforme patients–psychologues et des systèmes Odoo pour un groupe universitaire.",
   "hero.now": "En ce moment :",
-  "hero.cta1": "Voir mes projets ↓", "hero.cta2": "Comment marche mon IA",
+  "hero.cta1": "Voir mes projets ↓", "hero.cta2": "Découvrir THE SMART AI",
   "hero.meta": "📍 Alger, Algérie · Étudiant à HIS · 2 ans à l’ESI Sidi Bel Abbès",
   "stat.papers": "sujets du BAC corrigés, depuis 2008",
   "stat.attacks": "attaques testées sur THE SMART, toutes bloquées",
   "stat.lines": "lignes de TypeScript entre THE SMART et PsyConnect",
   "stat.ai": "fonctionnalités IA en production",
-  "ai.title": "L’IA au cœur de THE SMART",
-  "ai.sub": "Chaque appel IA de THE SMART passe par <strong>une seule fonction serveur</strong>. Le navigateur ne parle jamais à Gemini et la clé d’API ne quitte jamais le serveur — coût, abus et qualité se contrôlent en un seul endroit.",
-  "ai.chat": "Tuteur IA · maths · limites",
-  "ai.cap": "Répond en arabe avec la notation latine, étape par étape — comme une copie du BAC.",
-  "ai.pipe": "Une seule porte pour chaque appel IA",
-  "n1.t": "Élève", "n1.d": "pose une question, ouvre une erreur ou un sujet du BAC",
-  "n2.d": "session + vérification premium · 60 appels par 24 h glissantes · limites d’entrée · liste fermée de matières",
-  "n3.t": "Cache d’abord", "n3.d": "chaque sujet est résolu une fois, puis partagé par tous les élèves",
-  "n4.d": "5 modèles en relais : sur 429, 503 ou délai dépassé, le suivant répond",
-  "f1.t": "Tuteur IA",
-  "f1.d": "Chat en arabe sur plusieurs tours, lié à une matière et un chapitre choisis dans une liste fermée — aucun texte libre n’atteint le prompt par là, donc pas d’injection.",
-  "f2.t": "Explique-moi mon erreur",
-  "f2.d": "Explique une question ratée. La propriété est vérifiée côté serveur : un id inexistant et l’id d’un autre élève renvoient tous deux 404. Mis en cache : le rouvrir ne coûte rien.",
-  "f3.t": "Flashcards IA",
-  "f3.d": "5 à 10 cartes pour un chapitre en JSON contraint par schéma, dédoublonnées avec le paquet de l’élève. Une seule carte mal formée rejette tout le lot.",
-  "f4.t": "Solveur d’examens IA",
-  "f4.d": "Le seul appel multimodal : le PDF du sujet part chez Gemini en pièce jointe native. Appuyé sur le corrigé officiel s’il existe, résolu de zéro sinon — et l’élève voit lequel.",
-  "ft.t": "Conçu pour l’offre gratuite de Gemini",
-  "ft.more": "Lire l’article complet →",
-  "ft.1": "Le quota est décompté avant l’appel : une génération qui échoue ne peut pas boucler gratuitement.",
-  "ft.2": "Un script de préchauffage résout chaque sujet à l’avance — les élèves reçoivent des réponses en cache, instantanément.",
-  "ft.3": "Garde SSRF sur les URL des sujets : https uniquement, ni localhost, ni réseaux privés, ni métadonnées cloud (169.254.*).",
   "projects.title": "Projets choisis",
   "projects.sub": "Une startup, une plateforme client, un stage sur un vrai ERP, et les projets plus petits qui m’ont appris en chemin.",
   "smart.tag": "Startup · Fondateur",
   "smart.desc": "Plateforme de préparation au baccalauréat algérien, pensée d’abord en arabe. Les élèves s’entraînent sur de vrais sujets, font un quiz quotidien, suivent des cours rangés par chapitre et interrogent un tuteur IA qui répond comme une copie d’examen.",
-  "smart.b1": "Quatre fonctionnalités IA avec Google Gemini : tuteur, explication d’erreurs, générateur de flashcards et solveur d’examens",
+  "smart.b1": "Quatre fonctionnalités IA : tuteur, explication d’erreurs, générateur de flashcards et solveur d’examens",
   "smart.b2": "La correction s’exécute dans Postgres — le corrigé n’atteint jamais le navigateur",
-  "smart.b3": "210 tests d’attaque en tant que vrais utilisateurs : élévation de privilèges, IDOR, falsification de score, SSRF",
+  "smart.b3": "210 tests d’attaque en tant que vrais utilisateurs : élévation de privilèges, IDOR, falsification de score, contournement du premium",
   "smart.b4": "Flashcards, carnet d’erreurs, révision espacée, rapports hebdomadaires, classement et séries",
-  "smart.cta": "Voir le site en ligne ↗", "smart.cta2": "Comment marche l’IA ↑",
+  "smart.cta": "Voir le site en ligne ↗", "smart.cta2": "Découvrir THE SMART AI →",
   "psy.tag": "Freelance · Plateforme client",
   "psy.desc": "Une plateforme complète qui met en relation des patients avec des psychologues vérifiés. Je la construis pour un client, dans un contrat de 3 mois par jalons — de la maquette Figma au déploiement en production.",
   "psy.b1": "Trois espaces — patient, psychologue, admin — et un parcours d’onboarding où les diplômes sont vérifiés avant la mise en ligne d’un psychologue",
@@ -425,7 +338,7 @@ const FR = {
   "auto.tag": "IA · Automatisation",
   "auto.title": "Agents IA &amp; automatisations n8n",
   "auto.desc": "Un chatbot expert d’une documentation construit en RAG, et des workflows qui font circuler les données entre outils métier pour que personne ne les ressaisisse.",
-  "auto.b1": "Crawl planifié de la doc → découpage → embeddings Gemini → base vectorielle Supabase",
+  "auto.b1": "Crawl planifié de la doc → découpage → embeddings → base vectorielle",
   "auto.b2": "Un agent conversationnel avec mémoire qui ne répond qu’à partir de la doc indexée",
   "auto.b3": "n8n auto-hébergé : déclencheurs et planifications au lieu du copier-coller",
   "web.tag": "Web",
@@ -435,7 +348,7 @@ const FR = {
   "web.b2": "Next.js + Tailwind quand le site doit grandir",
   "web.b3": "Mobile d’abord, déployé depuis Git",
   "arc.title": "Projets antérieurs &amp; annexes",
-  "a1.t": "mybac v1", "a1.d": "Le premier THE SMART : un chatbot Gemini, des quiz et des pages anciens élèves, déployé sur Vercel.",
+  "a1.t": "mybac v1", "a1.d": "Le premier THE SMART : un chatbot IA, des quiz et des pages anciens élèves, déployé sur Vercel.",
   "a2.t": "Vitrine produits AMD", "a2.d": "Un site produit React + TypeScript pour la gamme AMD — une étude d’interface.",
   "a3.t": "Système de gestion universitaire", "a3.d": "Cours, notes, spécialités et utilisateurs, construit avec Django.",
   "a4.t": "Algorithmique en Pascal &amp; C", "a4.d": "Cours et TP : les bases, écrites à la main.",
@@ -459,7 +372,7 @@ const FR = {
   "j1.when": "2 ans",
   "j1.desc": "Deux ans dans l’une des meilleures écoles d’ingénieurs en informatique d’Algérie : algorithmique, C, Pascal, maths — et l’habitude d’aller au fond des choses.",
   "j2.when": "Sept. 2025", "j2.title": "Première version de mybac en ligne",
-  "j2.desc": "React, Supabase et un chatbot Gemini, en ligne sur Vercel. La graine de THE SMART.",
+  "j2.desc": "React, Supabase et un chatbot IA, en ligne sur Vercel. La graine de THE SMART.",
   "j3.when": "Juil. 2026", "j3.title": "Première plateforme freelance : PsyConnect",
   "j3.desc": "Un contrat par jalons avec un client : le design Figma d’abord, puis le développement sur TanStack Start et Supabase.",
   "j4.when": "Août 2026", "j4.title": "HIS &amp; stage au Groupe HIS-HTC-IRA",
@@ -473,8 +386,8 @@ const FR = {
   "footer": "codé à la main · hébergé sur GitHub Pages"
 };
 const ROT = {
-  en: ["growing THE SMART", "shipping PsyConnect", "building AI features on Gemini", "explaining AI in Arabic"],
-  fr: ["je fais grandir THE SMART", "je livre PsyConnect", "je construis des fonctionnalités IA avec Gemini", "j’explique l’IA en arabe"]
+  en: ["growing THE SMART", "shipping PsyConnect", "building THE SMART AI", "explaining AI in Arabic"],
+  fr: ["je fais grandir THE SMART", "je livre PsyConnect", "je construis THE SMART AI", "j’explique l’IA en arabe"]
 };
 const nodes = document.querySelectorAll("[data-i18n]");
 const EN = {};
@@ -569,25 +482,6 @@ const lines = [...document.querySelectorAll("#term .ln")];
   }
 })();
 
-/* ---------- AI tutor chat demo ---------- */
-const msgs = document.getElementById("msgs");
-const QUESTION = msgs.querySelector(".me").innerHTML;
-const STEPS = [...msgs.querySelectorAll(".ans")].map(s => s.innerHTML);
-async function chatLoop() {
-  for (;;) {
-    msgs.innerHTML = `<div class="msg me">${QUESTION}</div>`;
-    await wait(900);
-    const ai = document.createElement("div");
-    ai.className = "msg ai";
-    ai.innerHTML = `<span class="typing"><i></i><i></i><i></i></span>`;
-    msgs.append(ai);
-    await wait(1400);
-    ai.innerHTML = STEPS.map(s => `<span class="ans">${s}</span>`).join("");
-    for (const s of ai.children) { await wait(80); s.classList.add("on"); await wait(620); }
-    await wait(5200);
-  }
-}
-
 /* ---------- counters ---------- */
 function countUp(el) {
   const end = +el.dataset.count, t0 = performance.now();
@@ -605,13 +499,11 @@ reveals.forEach(el => {
   const sibs = [...el.parentElement.children].filter(c => c.classList.contains("reveal"));
   el.style.setProperty("--d", Math.min(sibs.indexOf(el), 5) * 90 + "ms");
 });
-let chatStarted = false;
 const io = new IntersectionObserver(entries => entries.forEach(e => {
   if (!e.isIntersecting) return;
   e.target.classList.add("in");
   io.unobserve(e.target);
   if (!reduced) e.target.querySelectorAll("[data-count]").forEach(countUp);
-  if (!reduced && !chatStarted && e.target.contains(msgs)) { chatStarted = true; chatLoop(); }
 }), { threshold: 0.15 });
 reveals.forEach(el => io.observe(el));
 
