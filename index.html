@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chabouti Abderrahim — AI & Full-stack Founder</title>
+<meta name="description" content="Chabouti Abderrahim — founder of THE SMART, an AI exam-prep platform for Algerian BAC students. Full-stack web, AI products and Odoo systems.">
+<meta property="og:title" content="Chabouti Abderrahim — AI & Full-stack Founder">
+<meta property="og:description" content="Founder of THE SMART. I build AI products that real people use.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#07080a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307080a'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='monospace' font-weight='700' font-size='28' fill='%236ef2b8'%3ECA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07080a; --surface:#0e1014; --surface-2:#14171d; --line:#1f242d; --line-2:#2a303b;
+  --text:#e8eaed; --muted:#8b94a3; --accent:#6ef2b8; --accent-dim:rgba(110,242,184,.12); --blue:#8ab4ff;
+  --sans:"Space Grotesk",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:56px 56px;opacity:.35;mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 30%,transparent 75%)}
+body::after{content:"";position:fixed;z-index:-1;pointer-events:none;width:720px;height:720px;top:-360px;left:50%;transform:translateX(-50%);
+  background:radial-gradient(circle,rgba(110,242,184,.13),transparent 65%)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+.mono{font-family:var(--mono)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--accent);color:#000;padding:8px 12px;border-radius:8px;z-index:99}
+.skip:focus{left:8px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(7,8,10,.7);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:24px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-weight:600;font-size:14px}
+.mark{display:grid;place-items:center;width:32px;height:32px;border-radius:9px;border:1px solid var(--line-2);background:var(--surface);color:var(--accent);font-family:var(--mono);font-weight:600;font-size:13px}
+.links{display:flex;gap:24px;margin-left:auto;font-size:14px;color:var(--muted)}
+.links a:hover{color:var(--text)}
+.lang{display:flex;border:1px solid var(--line-2);border-radius:999px;padding:3px;font-family:var(--mono);font-size:12px}
+.lang button{background:none;border:0;color:var(--muted);padding:4px 10px;border-radius:999px;cursor:pointer;font:inherit}
+.lang button[aria-pressed="true"]{background:var(--accent);color:#04120b;font-weight:600}
+@media (max-width:680px){.links{display:none}.lang{margin-left:auto}}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;padding:96px 0 72px}
+.status{display:inline-flex;align-items:center;gap:10px;padding:6px 14px 6px 10px;border:1px solid var(--line-2);border-radius:999px;background:var(--surface);font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.status:hover{border-color:var(--accent);color:var(--text)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(110,242,184,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(110,242,184,0)}100%{box-shadow:0 0 0 0 rgba(110,242,184,0)}}
+.monogram{width:72px;height:72px;border-radius:20px;display:grid;place-items:center;margin:28px 0 20px;font-family:var(--mono);font-weight:600;font-size:26px;color:var(--accent);
+  background:linear-gradient(var(--surface),var(--surface)) padding-box,linear-gradient(135deg,var(--accent),transparent 60%,var(--blue)) border-box;border:1px solid transparent}
+h1{font-size:clamp(40px,6.4vw,72px);line-height:1.02;letter-spacing:-.035em;font-weight:700}
+.role{margin-top:14px;font-family:var(--mono);font-size:clamp(14px,1.6vw,16px);color:var(--accent)}
+.lead{margin-top:20px;font-size:clamp(17px,1.9vw,20px);color:var(--muted);max-width:34em}
+.lead strong{color:var(--text);font-weight:500}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;font-weight:600;font-size:15px;border:1px solid var(--line-2);transition:transform .15s,border-color .15s,background .15s}
+.btn:hover{transform:translateY(-1px);border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:#04120b;border-color:var(--accent)}
+.btn.primary:hover{background:#8ff7c9}
+.meta{margin-top:28px;font-size:14px;color:var(--muted);display:flex;align-items:center;gap:8px}
+
+.term{border:1px solid var(--line-2);border-radius:16px;background:rgba(14,16,20,.85);box-shadow:0 30px 80px -30px rgba(0,0,0,.8),0 0 0 1px rgba(110,242,184,.04);overflow:hidden}
+.bar{display:flex;align-items:center;gap:7px;padding:12px 14px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:12px;color:var(--muted)}
+.bar i{width:11px;height:11px;border-radius:50%;background:var(--line-2)}
+.bar i:first-child{background:#ff6b6b99}.bar i:nth-child(2){background:#ffd16699}.bar i:nth-child(3){background:#6ef2b899}
+.bar span{margin-left:auto}
+.term pre{padding:20px 20px 24px;font-family:var(--mono);font-size:13px;line-height:1.85;white-space:pre-wrap;color:var(--muted)}
+.term .p{color:var(--accent)} .term .o{color:var(--text)} .term .ok{color:var(--accent)} .term .b{color:var(--blue)}
+.cursor{display:inline-block;width:8px;height:15px;background:var(--accent);vertical-align:-2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+@media (max-width:900px){.hero{grid-template-columns:1fr;gap:40px;padding:56px 0 48px}}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:16px;background:var(--surface);overflow:hidden}
+.stat{padding:24px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-size:clamp(28px,3.6vw,38px);letter-spacing:-.03em;font-weight:700}
+.stat b em{font-style:normal;color:var(--accent)}
+.stat span{font-size:13.5px;color:var(--muted)}
+@media (max-width:760px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+
+/* sections */
+section{padding:112px 0 0}
+.kicker{font-family:var(--mono);font-size:13px;color:var(--accent)}
+h2{font-size:clamp(30px,4vw,44px);letter-spacing:-.03em;line-height:1.1;margin:8px 0 40px;font-weight:700}
+.card{position:relative;border:1px solid var(--line);border-radius:18px;background:var(--surface);padding:28px;transition:border-color .2s}
+.card:hover{border-color:var(--line-2)}
+.card::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(110,242,184,.07),transparent 45%)}
+.card:hover::before{opacity:1}
+.tag{display:inline-block;font-family:var(--mono);font-size:12px;color:var(--accent);background:var(--accent-dim);padding:4px 10px;border-radius:999px}
+.card h3{font-size:22px;letter-spacing:-.02em;margin:14px 0 10px;line-height:1.25}
+.card p{color:var(--muted);font-size:15.5px}
+.card ul{list-style:none;margin-top:16px;display:grid;gap:9px}
+.card li{position:relative;padding-left:22px;font-size:15px;color:#c3c8d1}
+.card li::before{content:"→";position:absolute;left:0;color:var(--accent);font-family:var(--mono);font-size:13px;top:1px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:20px}
+.chips span{font-family:var(--mono);font-size:12px;color:var(--muted);border:1px solid var(--line-2);padding:3px 9px;border-radius:7px}
+
+.featured{display:grid;grid-template-columns:1fr 1.05fr;gap:36px;padding:32px;margin-bottom:20px}
+.featured h3{font-size:clamp(28px,3.4vw,36px)}
+.featured .btn{margin-top:26px}
+.shot{border:1px solid var(--line-2);border-radius:12px;overflow:hidden;background:var(--surface-2);align-self:center;transition:transform .3s}
+.featured:hover .shot{transform:translateY(-4px)}
+.shot .bar span{margin:0 auto}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media (max-width:960px){.featured{grid-template-columns:1fr;padding:24px}.grid3{grid-template-columns:1fr}}
+@media (min-width:640px) and (max-width:960px){.grid3{grid-template-columns:1fr 1fr}.grid3 .card:first-child{grid-column:1/-1}}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.skills h3{font-family:var(--mono);font-size:14px;font-weight:600;color:var(--text);margin:0 0 14px;display:flex;align-items:center;gap:8px}
+.skills h3::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--accent)}
+.skills .card:nth-child(2) h3::before{background:var(--blue)}
+.skills .card:nth-child(3) h3::before{background:#ffd166}
+.skills .card:nth-child(4) h3::before{background:#ff8fab}
+.skills .chips{margin-top:0}
+.skills .chips span{color:#c3c8d1}
+.content{margin-top:20px;display:flex;gap:24px;align-items:center}
+.content .ar{font-size:28px;font-weight:600;color:var(--accent);white-space:nowrap;font-family:system-ui,sans-serif}
+.content h3{margin:0 0 4px;font-size:18px}
+@media (max-width:960px){.skills{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.skills{grid-template-columns:1fr}.content{flex-direction:column;align-items:flex-start;gap:12px}}
+
+/* journey */
+.timeline{position:relative;display:grid;gap:14px;padding-left:28px}
+.timeline::before{content:"";position:absolute;left:7px;top:10px;bottom:10px;width:1px;background:linear-gradient(var(--accent),var(--line-2) 70%,transparent)}
+.step{position:relative;display:grid;grid-template-columns:120px 1fr;gap:20px;padding:22px 24px}
+.step::after{content:"";position:absolute;left:-26px;top:30px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.step.next::after{border-style:dashed;border-color:var(--muted)}
+.when{font-family:var(--mono);font-size:13px;color:var(--accent);padding-top:3px}
+.step h3{margin:0 0 6px;font-size:18px}
+.step p{font-size:15px}
+@media (max-width:640px){.step{grid-template-columns:1fr;gap:4px;padding:20px}}
+
+/* contact */
+.cta{text-align:center;padding:64px clamp(20px,5vw,64px);overflow:hidden}
+.cta::after{content:"";position:absolute;inset:auto 0 -60% 0;height:100%;background:radial-gradient(ellipse at center,rgba(110,242,184,.12),transparent 60%);pointer-events:none}
+.cta h2{margin:10px 0 14px;font-size:clamp(34px,5vw,56px)}
+.cta > p{max-width:32em;margin:0 auto}
+.contacts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:36px;position:relative;z-index:1}
+.contacts a{display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:18px 20px;border:1px solid var(--line-2);border-radius:14px;background:var(--surface-2);text-align:left;transition:border-color .15s,transform .15s}
+.contacts a:hover{border-color:var(--accent);transform:translateY(-2px)}
+.contacts small{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.contacts b{font-weight:500;font-size:15px;word-break:break-all}
+@media (max-width:760px){.contacts{grid-template-columns:1fr}}
+footer{padding:56px 0 40px;color:var(--muted);font-size:13px;font-family:var(--mono);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* reveal */
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}.js .reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top"><span class="mark">CA</span>chabouti</a>
+    <div class="links">
+      <a href="#projects" data-i18n="nav.projects">Projects</a>
+      <a href="#skills" data-i18n="nav.skills">Skills</a>
+      <a href="#journey" data-i18n="nav.journey">Journey</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </div>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+  </div>
+</nav>
+
+<main id="main" class="wrap">
+  <header class="hero" id="top">
+    <div>
+      <a class="status" href="https://mybac-25n.pages.dev/" target="_blank" rel="noopener"><span class="dot"></span><span data-i18n="hero.status">THE SMART is live — 114 BAC papers online</span></a>
+      <div class="monogram" aria-hidden="true">CA</div>
+      <h1>Chabouti<br>Abderrahim</h1>
+      <p class="role" data-i18n="hero.role">&gt; AI &amp; Full-stack Founder</p>
+      <p class="lead" data-i18n="hero.lead">I build <strong>AI products that real people use</strong> — from an Arabic AI tutor for Algerian BAC students to Odoo 19 systems for a university group.</p>
+      <div class="ctas">
+        <a class="btn primary" href="#projects" data-i18n="hero.cta1">See my work ↓</a>
+        <a class="btn" href="#contact" data-i18n="hero.cta2">Get in touch</a>
+      </div>
+      <p class="meta" data-i18n="hero.meta">📍 Algeria · Student at HIS · 2 years at ESI Sidi Bel Abbès</p>
+    </div>
+
+    <div class="term reveal" aria-label="Terminal summary">
+      <div class="bar"><i></i><i></i><i></i><span>~/abderrahim</span></div>
+<pre><span class="p">~ $</span> <span class="o">whoami</span>
+founder @ <span class="b">THE SMART</span> · ai &amp; full-stack
+
+<span class="p">~ $</span> <span class="o">cat stack.txt</span>
+react · typescript · supabase · postgres
+python · odoo 19 · gemini · n8n · docker
+
+<span class="p">~ $</span> <span class="o">npm run security</span>
+<span class="ok">✓ 210 / 210 attacks blocked</span>
+
+<span class="p">~ $</span> <span class="cursor"></span></pre>
+    </div>
+  </header>
+
+  <div class="stats reveal">
+    <div class="stat"><b>114</b><span data-i18n="stat.papers">BAC papers with solutions, back to 2008</span></div>
+    <div class="stat"><b>210</b><span data-i18n="stat.attacks">security attacks run on THE SMART, all blocked</span></div>
+    <div class="stat"><b>19<em>k</em></b><span data-i18n="stat.lines">lines of strict TypeScript</span></div>
+    <div class="stat"><b>68<em>+</em></b><span data-i18n="stat.tests">unit tests across my Odoo 19 modules</span></div>
+  </div>
+
+  <section id="projects">
+    <p class="kicker">// projects</p>
+    <h2 data-i18n="projects.title">Selected work</h2>
+
+    <article class="card featured reveal">
+      <div>
+        <span class="tag" data-i18n="smart.tag">Startup · Founder</span>
+        <h3>THE SMART</h3>
+        <p data-i18n="smart.desc">An Arabic-first exam-prep platform for the Algerian baccalauréat. Students practise on real past papers, take a daily quiz, follow chapter-ordered lessons and ask an AI tutor that answers the way an exam paper is written.</p>
+        <ul>
+          <li data-i18n="smart.b1">AI tutor and exam solver on Google Gemini, with solutions pre-computed and cached for every paper</li>
+          <li data-i18n="smart.b2">Grading runs inside Postgres — the answer key never reaches the browser</li>
+          <li data-i18n="smart.b3">210 attack tests as real signed-in users: privilege escalation, IDOR, score forgery, SSRF</li>
+          <li data-i18n="smart.b4">Flashcards, mistake log, spaced review, weekly reports, leaderboard and streaks</li>
+        </ul>
+        <div class="chips"><span>React</span><span>TypeScript</span><span>Tailwind</span><span>Supabase</span><span>PostgreSQL · RLS</span><span>Edge Functions</span><span>Gemini</span><span>Cloudflare</span></div>
+        <a class="btn primary" href="https://mybac-25n.pages.dev/" target="_blank" rel="noopener" data-i18n="smart.cta">Visit the live site ↗</a>
+      </div>
+      <a class="shot" href="https://mybac-25n.pages.dev/" target="_blank" rel="noopener" aria-label="THE SMART live site">
+        <div class="bar"><i></i><i></i><i></i><span>mybac-25n.pages.dev</span></div>
+        <img src="assets/the-smart.png" width="1440" height="900" loading="lazy" alt="THE SMART landing page in Arabic, showing a daily maths question, a progress card and a 7-day streak">
+      </a>
+    </article>
+
+    <div class="grid3">
+      <article class="card reveal">
+        <span class="tag" data-i18n="odoo.tag">Internship · Groupe HIS-HTC-IRA</span>
+        <h3 data-i18n="odoo.title">Odoo 19 modules for a university group</h3>
+        <p data-i18n="odoo.desc">Custom Odoo 19 Community modules on the official Docker image — no fork to maintain.</p>
+        <ul>
+          <li data-i18n="odoo.b1">Stock &amp; POS catalogue governance, valuation, losses</li>
+          <li data-i18n="odoo.b2">Identity core: one institutional ID per person</li>
+          <li data-i18n="odoo.b3">HR and Google Sheets sync into the person registry</li>
+          <li data-i18n="odoo.b4">University maintenance: requests, inspections, dashboard</li>
+          <li data-i18n="odoo.b5">Procurement and recruitment processes modelled in BPMN</li>
+        </ul>
+        <div class="chips"><span>Python</span><span>Odoo 19</span><span>PostgreSQL</span><span>Docker</span><span>BPMN</span></div>
+      </article>
+
+      <article class="card reveal">
+        <span class="tag" data-i18n="psy.tag">Product · Health</span>
+        <h3>PsyConnect</h3>
+        <p data-i18n="psy.desc">A patient–psychologist platform that connects people with psychologists, from finding the right one to booking and holding consultations.</p>
+        <ul>
+          <li data-i18n="psy.b1">Patient and psychologist sides in one app</li>
+          <li data-i18n="psy.b2">Booking and consultation flow</li>
+          <li data-i18n="psy.b3">Product proposal written end to end</li>
+        </ul>
+        <div class="chips"><span>Product design</span><span>Web app</span><span>Healthcare</span></div>
+      </article>
+
+      <article class="card reveal">
+        <span class="tag" data-i18n="auto.tag">Automation · Web</span>
+        <h3 data-i18n="auto.title">n8n automations &amp; client sites</h3>
+        <p data-i18n="auto.desc">Business workflows that move data between Google Sheets, email and business tools so nobody retypes it — plus fast websites for clients.</p>
+        <ul>
+          <li data-i18n="auto.b1">n8n workflows for day-to-day business operations</li>
+          <li data-i18n="auto.b2">Landing site for a chess coach</li>
+          <li data-i18n="auto.b3">Static and Next.js sites, deployed on Vercel or Pages</li>
+        </ul>
+        <div class="chips"><span>n8n</span><span>Google Sheets</span><span>HTML/CSS/JS</span><span>Next.js</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills">
+    <p class="kicker">// skills</p>
+    <h2 data-i18n="skills.title">What I work with</h2>
+    <div class="skills">
+      <div class="card reveal"><h3 data-i18n="skills.ai">AI &amp; ML</h3><div class="chips"><span>Gemini API</span><span>LLM prompting</span><span>Python</span><span>NumPy</span><span>pandas</span><span>TensorFlow</span><span>Stanford CS229</span></div></div>
+      <div class="card reveal"><h3 data-i18n="skills.web">Full-stack web</h3><div class="chips"><span>React</span><span>TypeScript</span><span>Vite</span><span>Next.js</span><span>Tailwind</span><span>shadcn/ui</span><span>Supabase</span><span>PostgreSQL</span></div></div>
+      <div class="card reveal"><h3 data-i18n="skills.biz">Business systems</h3><div class="chips"><span>Odoo 19</span><span>n8n</span><span>BPMN</span><span>Google Sheets API</span><span>ERP data models</span></div></div>
+      <div class="card reveal"><h3 data-i18n="skills.ship">Ship &amp; secure</h3><div class="chips"><span>Docker</span><span>Git · GitHub</span><span>Cloudflare Pages</span><span>Vercel</span><span>Row-level security</span><span>DAST scans</span></div></div>
+    </div>
+    <div class="card content reveal">
+      <span class="ar" lang="ar">الذكاء الاصطناعي</span>
+      <div>
+        <h3 data-i18n="content.title">I also explain AI in Arabic</h3>
+        <p data-i18n="content.desc">I’m making short Arabic videos for students on how tools like ChatGPT actually “understand” us — to make AI less magic and more learnable.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="journey">
+    <p class="kicker">// journey</p>
+    <h2 data-i18n="journey.title">How I got here</h2>
+    <div class="timeline">
+      <div class="card step reveal"><span class="when" data-i18n="j1.when">2 years</span><div><h3>ESI Sidi Bel Abbès</h3><p data-i18n="j1.desc">Two years at one of Algeria’s top computer-science engineering schools: algorithms, C, Pascal, maths — and the habit of going deep.</p></div></div>
+      <div class="card step reveal"><span class="when" data-i18n="j2.when">Sep 2025</span><div><h3 data-i18n="j2.title">First version of mybac ships</h3><p data-i18n="j2.desc">React, Supabase and a Gemini chatbot, live on Vercel. The seed of THE SMART.</p></div></div>
+      <div class="card step reveal"><span class="when">2026</span><div><h3 data-i18n="j3.title">HIS &amp; internship at Groupe HIS-HTC-IRA</h3><p data-i18n="j3.desc">Moved to HIS. Built Odoo 19 modules for the group’s stock, identity, HR and maintenance, and modelled its processes in BPMN.</p></div></div>
+      <div class="card step reveal"><span class="when" data-i18n="j4.when">Sep 2026</span><div><h3 data-i18n="j4.title">THE SMART relaunch</h3><p data-i18n="j4.desc">Rebuilt from the ground up: server-side grading, AI exam solver, personal AI flashcards, a full security audit and a Cloudflare deploy.</p></div></div>
+      <div class="card step next reveal"><span class="when" data-i18n="j5.when">Next</span><div><h3 data-i18n="j5.title">More AI products people actually use</h3><p data-i18n="j5.desc">Growing THE SMART into the go-to study tool for Algerian students — and building the next one.</p></div></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="card cta reveal">
+      <p class="kicker">// contact</p>
+      <h2 data-i18n="contact.title">Let’s build something.</h2>
+      <p data-i18n="contact.desc">Open to internships, freelance projects and startup collaborations. WhatsApp or email is the fastest way to reach me.</p>
+      <div class="contacts">
+        <a href="mailto:a.chabouti@esi-sba.dz"><small>email</small><b>a.chabouti@esi-sba.dz</b></a>
+        <a href="https://wa.me/213798834763" target="_blank" rel="noopener"><small>whatsapp · phone</small><b>+213 798 83 47 63</b></a>
+        <a href="https://github.com/chaboutiabdo" target="_blank" rel="noopener"><small>github</small><b>github.com/chaboutiabdo</b></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Chabouti Abderrahim</span>
+    <span data-i18n="footer">hand-coded · hosted on GitHub Pages</span>
+  </footer>
+</main>
+
+<script>
+document.documentElement.classList.add("js");
+
+const FR = {
+  "nav.projects": "Projets", "nav.skills": "Compétences", "nav.journey": "Parcours", "nav.contact": "Contact",
+  "hero.status": "THE SMART est en ligne — 114 sujets du BAC",
+  "hero.role": "&gt; Fondateur · IA &amp; Full-stack",
+  "hero.lead": "Je construis des <strong>produits IA utilisés par de vraies personnes</strong> — d’un tuteur IA en arabe pour les bacheliers algériens aux modules Odoo 19 d’un groupe universitaire.",
+  "hero.cta1": "Voir mes projets ↓", "hero.cta2": "Me contacter",
+  "hero.meta": "📍 Algérie · Étudiant à HIS · 2 ans à l’ESI Sidi Bel Abbès",
+  "stat.papers": "sujets du BAC corrigés, depuis 2008",
+  "stat.attacks": "attaques testées sur THE SMART, toutes bloquées",
+  "stat.lines": "lignes de TypeScript strict",
+  "stat.tests": "tests unitaires sur mes modules Odoo 19",
+  "projects.title": "Projets choisis",
+  "smart.tag": "Startup · Fondateur",
+  "smart.desc": "Plateforme de préparation au baccalauréat algérien, pensée d’abord en arabe. Les élèves s’entraînent sur de vrais sujets, font un quiz quotidien, suivent des cours rangés par chapitre et interrogent un tuteur IA qui répond comme une copie d’examen.",
+  "smart.b1": "Tuteur IA et solveur d’examens avec Google Gemini, solutions pré-calculées et mises en cache pour chaque sujet",
+  "smart.b2": "La correction s’exécute dans Postgres — le corrigé n’atteint jamais le navigateur",
+  "smart.b3": "210 tests d’attaque en tant que vrais utilisateurs : élévation de privilèges, IDOR, falsification de score, SSRF",
+  "smart.b4": "Flashcards, carnet d’erreurs, révision espacée, rapports hebdomadaires, classement et séries",
+  "smart.cta": "Voir le site en ligne ↗",
+  "odoo.tag": "Stage · Groupe HIS-HTC-IRA",
+  "odoo.title": "Modules Odoo 19 pour un groupe universitaire",
+  "odoo.desc": "Modules Odoo 19 Community sur l’image Docker officielle — aucun fork à maintenir.",
+  "odoo.b1": "Gouvernance du catalogue stock &amp; PDV, valorisation, pertes",
+  "odoo.b2": "Socle identité : un matricule unique par personne",
+  "odoo.b3": "RH et synchronisation Google Sheets vers le référentiel personnes",
+  "odoo.b4": "Maintenance universitaire : demandes, inspections, tableau de bord",
+  "odoo.b5": "Processus achats et recrutement modélisés en BPMN",
+  "psy.tag": "Produit · Santé",
+  "psy.desc": "Une plateforme patients–psychologues qui met les gens en relation avec un psychologue, de la recherche du bon praticien à la prise de rendez-vous et aux consultations.",
+  "psy.b1": "Espace patient et espace psychologue dans une seule app",
+  "psy.b2": "Parcours de réservation et de consultation",
+  "psy.b3": "Proposition produit rédigée de bout en bout",
+  "auto.tag": "Automatisation · Web",
+  "auto.title": "Automatisations n8n &amp; sites clients",
+  "auto.desc": "Des workflows qui font circuler les données entre Google Sheets, l’e-mail et les outils métier, pour que personne ne les ressaisisse — et des sites rapides pour des clients.",
+  "auto.b1": "Workflows n8n pour les opérations quotidiennes",
+  "auto.b2": "Site vitrine pour un coach d’échecs",
+  "auto.b3": "Sites statiques et Next.js, déployés sur Vercel ou Pages",
+  "skills.title": "Mes outils",
+  "skills.ai": "IA &amp; ML", "skills.web": "Web full-stack", "skills.biz": "Systèmes métier", "skills.ship": "Livrer &amp; sécuriser",
+  "content.title": "J’explique aussi l’IA en arabe",
+  "content.desc": "Je prépare de courtes vidéos en arabe pour les étudiants sur la façon dont des outils comme ChatGPT nous « comprennent » — pour rendre l’IA moins magique et plus accessible.",
+  "journey.title": "Mon parcours",
+  "j1.when": "2 ans",
+  "j1.desc": "Deux ans dans l’une des meilleures écoles d’ingénieurs en informatique d’Algérie : algorithmique, C, Pascal, maths — et l’habitude d’aller au fond des choses.",
+  "j2.when": "Sept. 2025",
+  "j2.title": "Première version de mybac en ligne",
+  "j2.desc": "React, Supabase et un chatbot Gemini, en ligne sur Vercel. La graine de THE SMART.",
+  "j3.title": "HIS &amp; stage au Groupe HIS-HTC-IRA",
+  "j3.desc": "Passage à HIS. Développement de modules Odoo 19 pour le stock, l’identité, les RH et la maintenance du groupe, et modélisation de ses processus en BPMN.",
+  "j4.when": "Sept. 2026",
+  "j4.title": "Relance de THE SMART",
+  "j4.desc": "Reconstruit de zéro : correction côté serveur, solveur d’examens IA, flashcards IA personnelles, audit de sécurité complet et déploiement Cloudflare.",
+  "j5.when": "Ensuite",
+  "j5.title": "D’autres produits IA vraiment utilisés",
+  "j5.desc": "Faire de THE SMART l’outil de révision de référence des élèves algériens — et construire le suivant.",
+  "contact.title": "Construisons quelque chose.",
+  "contact.desc": "Ouvert aux stages, missions freelance et collaborations startup. WhatsApp ou e-mail : c’est le plus rapide.",
+  "footer": "codé à la main · hébergé sur GitHub Pages"
+};
+
+const nodes = document.querySelectorAll("[data-i18n]");
+const EN = {};
+nodes.forEach(el => EN[el.dataset.i18n] = el.innerHTML);
+
+function setLang(lang) {
+  const dict = lang === "fr" ? FR : EN;
+  nodes.forEach(el => { const t = dict[el.dataset.i18n]; if (t != null) el.innerHTML = t; });
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-lang]").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang));
+  try { localStorage.setItem("lang", lang); } catch (e) {}
+}
+document.querySelectorAll("[data-lang]").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
+let saved = null;
+try { saved = localStorage.getItem("lang"); } catch (e) {}
+setLang(saved || ((navigator.language || "").toLowerCase().startsWith("fr") ? "fr" : "en"));
+
+// cursor glow on cards
+document.querySelectorAll(".card").forEach(c => c.addEventListener("pointermove", e => {
+  const r = c.getBoundingClientRect();
+  c.style.setProperty("--mx", e.clientX - r.left + "px");
+  c.style.setProperty("--my", e.clientY - r.top + "px");
+}));
+
+// reveal on scroll
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+}), { threshold: 0.12 });
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+</script>
+</body>
+</html>
